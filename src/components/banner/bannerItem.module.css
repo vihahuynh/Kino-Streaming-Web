@@ -1,0 +1,98 @@
+.backdrop {
+  width: 100vw;
+  opacity: 0.8;
+  position: relative;
+  filter: brightness(0.3);
+}
+
+.poster {
+  width: 20vw;
+  position: absolute;
+  right: 15rem;
+  top: 10rem;
+  border-radius: 1.2rem;
+}
+
+.details {
+  width: 40vw;
+  position: absolute;
+  top: 12rem;
+  left: 15rem;
+  color: var(--color-white);
+  font-size: 1.6rem;
+}
+
+.heading {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 5rem;
+  width: 80%;
+}
+
+.info {
+  margin-right: 4rem;
+}
+
+.overview {
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  position: relative;
+  margin-right: 3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--color-primary);
+  padding: 1.5rem 2.5rem;
+  border-radius: 1.2rem;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+.btn--play:hover {
+  color: var(--color-white);
+}
+
+.btn--info:hover {
+  color: var(--color-primary);
+}
+
+.btn--play {
+  color: var(--color-white);
+  background-image: linear-gradient(var(--color-primary), var(--color-primary));
+}
+
+.btn--info {
+  color: var(--color-primary);
+  background-image: linear-gradient(transparent, transparent);
+}
+
+.btn__text {
+  position: relative;
+  z-index: 1;
+}
+
+svg {
+  position: relative;
+  top: -3px;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
+  z-index: 1;
+}
+
+.btn--play svg {
+  fill: var(--color-white);
+}
+
+.btn--info svg {
+  fill: var(--color-primary);
+}
