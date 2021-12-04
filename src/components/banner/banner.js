@@ -16,7 +16,7 @@ const Banner = () => {
   return (
     <Carousel>
       {movies.map((movie) => (
-        <Carousel.Item interval={3000} key={movie.id} nextIcon prevIcon>
+        <Carousel.Item interval={2000} key={movie.id} nextIcon prevIcon>
           <BannerItem movie={movie} />
         </Carousel.Item>
       ))}
