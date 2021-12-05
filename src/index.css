@@ -1,20 +1,27 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
 :root {
   --color-white: #fff;
   --color-primary: #fd7014;
   --color-primary-dark: #e65c01;
+  --color-grey-dark: #1a1a1a;
+  --color-grey: #252525;
+  --color-brown: #30241c;
+  --color-black: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
 }
 
 html {
-  font-size: 10px;
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 body {
@@ -24,6 +31,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--color-grey-dark);
 }
 
 code {

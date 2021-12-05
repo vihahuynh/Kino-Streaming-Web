@@ -40,7 +40,7 @@ const Banner = () => {
         }
       >
         {movies.map((movie) => (
-          <Carousel.Item interval={2000} key={movie.id}>
+          <Carousel.Item interval={2500} key={movie.id}>
             <BannerItem movie={movie} />
           </Carousel.Item>
         ))}
