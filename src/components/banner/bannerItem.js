@@ -21,10 +21,13 @@ const BannerItem = ({ movie }) => {
       <div className={classes.details}>
         <h1 className={classes.heading}>{movie.title}</h1>
         <div>
-          <span className={classes.info}>Rating: {movie.vote_average}/10</span>
+          <span className={classes.info}>{movie.vote_average}/10</span>
           <span className={classes.info}>
-            Release: {movie.release_date.slice(0, 4)}
+            <svg>
+              <use xlinkHref="/images/sprite.svg#icon-dot-single"></use>
+            </svg>
           </span>
+          <span className={classes.info}>{movie.release_date.slice(0, 4)}</span>
         </div>
         <p className={classes.overview}>{movie.overview}</p>
         <div>

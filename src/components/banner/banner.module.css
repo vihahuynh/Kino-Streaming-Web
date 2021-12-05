@@ -1,0 +1,5 @@
+.carousel-arrow {
+  height: 4rem;
+  width: 4rem;
+  fill: var(--color-primary);
+}

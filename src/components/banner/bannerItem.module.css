@@ -34,7 +34,13 @@
 }
 
 .info {
-  margin-right: 4rem;
+  margin-right: 2rem;
+}
+
+.info svg {
+  fill: var(--color-white);
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .overview {
@@ -84,7 +90,7 @@
   z-index: 1;
 }
 
-svg {
+.btn svg {
   position: relative;
   top: -3px;
   width: 2.5rem;
