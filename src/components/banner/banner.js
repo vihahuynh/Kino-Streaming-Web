@@ -5,6 +5,8 @@ import classes from "./banner.module.css";
 import { Carousel } from "react-bootstrap";
 import BannerItem from "./bannerItem";
 import Navigation from "../navigation";
+import NextArrow from "../arrows/nextArrow";
+import PrevArrow from "../arrows/prevArrow";
 
 const Banner = () => {
   const [movies, setMovies] = useState([]);
@@ -24,20 +26,8 @@ const Banner = () => {
       </div>
 
       <Carousel
-        nextIcon={
-          <span aria-hidden="true">
-            <svg className={classes["carousel-arrow"]}>
-              <use xlinkHref="/images/sprite.svg#icon-chevron-right"></use>
-            </svg>
-          </span>
-        }
-        prevIcon={
-          <span aria-hidden="true">
-            <svg className={classes["carousel-arrow"]}>
-              <use xlinkHref="/images/sprite.svg#icon-chevron-left"></use>
-            </svg>
-          </span>
-        }
+        nextIcon={<NextArrow size="large" />}
+        prevIcon={<PrevArrow size="large" />}
       >
         {movies.map((movie) => (
           <Carousel.Item interval={2500} key={movie.id}>

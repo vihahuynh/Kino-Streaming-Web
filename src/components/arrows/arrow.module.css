@@ -1,0 +1,21 @@
+.arrow--large {
+  height: 5rem;
+  width: 5rem;
+  fill: var(--color-primary);
+}
+
+.arrow--small {
+  height: 3rem;
+  width: 3rem;
+  fill: var(--color-primary);
+  position: absolute;
+  top: 45%;
+}
+
+.arrow--right {
+  right: -4rem;
+}
+
+.arrow--left {
+  left: -4rem;
+}

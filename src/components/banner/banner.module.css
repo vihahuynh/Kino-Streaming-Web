@@ -2,12 +2,6 @@
   position: relative;
 }
 
-.carousel-arrow {
-  height: 4rem;
-  width: 4rem;
-  fill: var(--color-primary);
-}
-
 .logo {
   position: absolute;
   top: 3rem;
