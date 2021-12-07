@@ -6,7 +6,11 @@ const Home = () => {
   return (
     <>
       <Banner />
-      <MovieList name="Popular movies" type="popular" />
+      <div className="all-lists">
+        <MovieList name="Popular movies" type="popular" />
+        <MovieList name="Top rated movies" type="top_rated" />
+        <MovieList name="Trending movies" trending={true} />
+      </div>
     </>
   );
 };

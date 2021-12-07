@@ -33,9 +33,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-color: var(--color-grey-dark);
+  position: relative;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.all-lists {
+  margin: 6rem 0;
+}
+
+.nav {
+  position: absolute;
+  top: 4rem;
+  right: 15rem;
+  z-index: 1;
 }

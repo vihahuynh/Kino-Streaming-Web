@@ -1,5 +1,9 @@
 .container {
-  padding: 5vw;
+  padding: 3rem 6rem 0;
+}
+
+.container:first-child {
+  padding-top: 2rem;
 }
 
 .list {
@@ -12,6 +16,6 @@
   color: var(--color-white);
   margin: 0;
   padding: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-left: 1rem;
 }

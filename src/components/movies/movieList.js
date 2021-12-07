@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import movieServices from "../../services/movies";
+import trendingServices from "../../services/trending";
 import MovieItem from "./movieItem";
 import Slider from "react-slick";
 
@@ -7,9 +8,7 @@ import classes from "./movieList.module.css";
 import NextArrow from "../arrows/nextArrow";
 import PrevArrow from "../arrows/prevArrow";
 
-// const setti
-
-var settings = {
+const settings = {
   infinite: true,
   autoplay: true,
   slidesToShow: 3,
@@ -48,17 +47,22 @@ var settings = {
   ],
 };
 
-const MovieList = ({ name, type }) => {
+const MovieList = ({ name, type, trending = false }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const response = await movieServices.getMovieList(type);
-      setMovies(response);
+      if (!trending) {
+        const response = await movieServices.getMovieList(type);
+        setMovies(response);
+      } else {
+        const response = await trendingServices.getTrending("movie", "week");
+        setMovies(response);
+      }
     };
 
     fetchMovies();
-  }, [type]);
+  }, [type, trending]);
 
   return (
     <div className={classes.container}>

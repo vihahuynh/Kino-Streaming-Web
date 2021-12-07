@@ -4,7 +4,6 @@ import classes from "./banner.module.css";
 
 import { Carousel } from "react-bootstrap";
 import BannerItem from "./bannerItem";
-import Navigation from "../navigation";
 import NextArrow from "../arrows/nextArrow";
 import PrevArrow from "../arrows/prevArrow";
 
@@ -21,9 +20,6 @@ const Banner = () => {
   return (
     <div className={classes.banner}>
       <img className={classes.logo} alt="Logo" src="/images/logo.png" />
-      <div className={classes.nav}>
-        <Navigation />
-      </div>
 
       <Carousel
         nextIcon={<NextArrow size="large" />}
