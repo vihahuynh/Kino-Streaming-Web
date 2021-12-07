@@ -13,7 +13,7 @@ const MovieItem = ({ movie }) => {
       </div>
       <div className={classes.details}>
         <div>
-          <h5 className={classes.title}>{movie.title}</h5>
+          <h5 className={classes.title}>{movie.title || movie.name}</h5>
           <p>
             {movie.release_date
               ? movie.release_date.slice(0, 4)
