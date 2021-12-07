@@ -7,9 +7,13 @@ const Home = () => {
     <>
       <Banner />
       <div className="all-lists">
-        <MovieList name="Popular movies" type="popular" />
-        <MovieList name="Top rated movies" type="top_rated" />
+        <MovieList name="Popular movies" query="popular" />
+        <MovieList name="Top rated movies" query="top_rated" />
         <MovieList name="Trending movies" trending={true} />
+
+        <MovieList name="Popular TV shows" movie={false} query="popular" />
+        <MovieList name="Top rated TV shows" movie={false} query="top_rated" />
+        <MovieList name="Trending TV shows" movie={false} trending={true} />
       </div>
     </>
   );

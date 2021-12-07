@@ -14,7 +14,11 @@ const MovieItem = ({ movie }) => {
       <div className={classes.details}>
         <div>
           <h5 className={classes.title}>{movie.title}</h5>
-          <p>{movie.release_date.slice(0, 4)}</p>
+          <p>
+            {movie.release_date
+              ? movie.release_date.slice(0, 4)
+              : movie?.first_air_date.slice(0, 4)}
+          </p>
         </div>
         <div className={classes.rating}>
           <div className={classes["rating__icon-container"]}>

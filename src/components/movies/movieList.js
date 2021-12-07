@@ -47,22 +47,28 @@ const settings = {
   ],
 };
 
-const MovieList = ({ name, type, trending = false }) => {
+const MovieList = ({ name, query, trending = false, movie = true }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       if (!trending) {
-        const response = await movieServices.getMovieList(type);
+        const response = await movieServices.getMovieList(
+          movie ? "movie" : "tv",
+          query
+        );
         setMovies(response);
       } else {
-        const response = await trendingServices.getTrending("movie", "week");
+        const response = await trendingServices.getTrending(
+          movie ? "movie" : "tv",
+          "week"
+        );
         setMovies(response);
       }
     };
 
     fetchMovies();
-  }, [type, trending]);
+  }, [query, trending, movie]);
 
   return (
     <div className={classes.container}>
