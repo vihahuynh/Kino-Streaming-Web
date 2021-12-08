@@ -28,7 +28,7 @@ const MovieItem = ({ movie }) => {
           </div>
           <p className={classes.rating__text}>{movie.vote_average}</p>
         </div>
-        <a className={classes.btn} href="#">
+        <a className={classes.btn} href="/">
           <p className={classes.btn__text}>Watch now</p>
         </a>
       </div>

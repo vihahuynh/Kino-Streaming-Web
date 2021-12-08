@@ -33,13 +33,13 @@ const BannerItem = ({ movie }) => {
         </div>
         <p className={classes.overview}>{shortOverview}</p>
         <div>
-          <a className={`${classes.btn} ${classes["btn--play"]}`} href="#s">
+          <a className={`${classes.btn} ${classes["btn--play"]}`} href="/">
             <svg>
               <use xlinkHref="/images/sprite.svg#icon-controller-play"></use>
             </svg>
             <span className={classes["btn__text"]}>Play now</span>
           </a>
-          <a className={`${classes.btn} ${classes["btn--info"]}`} href="#s">
+          <a className={`${classes.btn} ${classes["btn--info"]}`} href="/">
             <svg>
               <use xlinkHref="/images/sprite.svg#icon-info-with-circle"></use>
             </svg>

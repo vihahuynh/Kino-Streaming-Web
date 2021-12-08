@@ -75,7 +75,7 @@ const MovieList = ({ name, query, trending = false, movie = true }) => {
       <h2 className={classes.title}>{name}</h2>
 
       <Slider {...settings} className={classes.list}>
-        {movies.slice(0, 18).map((movie) => (
+        {movies.map((movie) => (
           <MovieItem key={movie.id} movie={movie} />
         ))}
       </Slider>
