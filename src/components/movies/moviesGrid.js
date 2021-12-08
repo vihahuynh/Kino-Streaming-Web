@@ -11,7 +11,7 @@ const MoviesGrid = ({ movie = true }) => {
     const fetchMovies = async () => {
       const response = await movieServices.getMovieList(
         movie ? "movie" : "tv",
-        "upcoming"
+        "popular"
       );
       setMovies(response);
     };

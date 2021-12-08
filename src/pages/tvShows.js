@@ -1,7 +1,18 @@
 import React from "react";
+import MoviesGrid from "../components/movies/moviesGrid";
+import Wrapper from "../components/wrapper";
 
-const TVShows = () => {
-  return <h1>TVShows</h1>;
+import classes from "./movies.module.css";
+
+const tvShows = () => {
+  return (
+    <Wrapper>
+      <div className={classes.movies__title}>
+        <h1>tvShows</h1>
+      </div>
+      <MoviesGrid movie={false} />
+    </Wrapper>
+  );
 };
 
-export default TVShows;
+export default tvShows;
