@@ -1,0 +1,14 @@
+.copyright {
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+  background-color: var(--color-blue-dark);
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--color-grey-light);
+  padding: 1.5rem 10rem;
+}
+
+p {
+  margin: 0;
+}

@@ -1,11 +1,11 @@
 import React from "react";
-import Banner from "../components/banner/banner";
 import MovieList from "../components/movies/movieList";
-import Newsletter from "../components/newsletter";
+import Banner from "../components/banner/banner";
+import Wrapper from "../components/wrapper";
 
 const Home = () => {
   return (
-    <>
+    <Wrapper>
       <Banner />
       <div className="all-lists">
         <MovieList name="Popular movies" query="popular" />
@@ -16,8 +16,7 @@ const Home = () => {
         <MovieList name="Top rated TV shows" movie={false} query="top_rated" />
         <MovieList name="Trending TV shows" movie={false} trending={true} />
       </div>
-      <Newsletter />
-    </>
+    </Wrapper>
   );
 };
 

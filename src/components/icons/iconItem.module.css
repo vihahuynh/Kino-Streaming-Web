@@ -1,0 +1,17 @@
+.icon {
+  fill: var(--color-white);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon__container {
+  padding: 1rem;
+  margin-right: 1rem;
+  border-radius: 1rem;
+
+  transition: all 0.3s;
+}
+
+.icon__container:hover {
+  background-color: var(--color-primary);
+}

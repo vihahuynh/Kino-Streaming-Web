@@ -1,0 +1,45 @@
+.footer {
+  padding: 8rem 10rem;
+  display: grid;
+  grid-template-columns: 3fr repeat(3, 2fr);
+  grid-template-rows: min-content min-content;
+
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.footer__social {
+  grid-row: 1 / -1;
+  grid-column: 1 / 2;
+}
+
+.footer__links:not(:last-child) {
+  margin-right: 4rem;
+}
+
+.footer__links--1 {
+  grid-row: 1 /-1;
+  grid-column: 2 / 3;
+}
+
+.footer__links--2 {
+  grid-row: 1 /-1;
+  grid-column: 3 / 4;
+}
+
+.footer__links--3 {
+  grid-row: 1 /-1;
+  grid-column: 4 / 5;
+}
+
+.logo {
+  height: 3rem;
+  width: auto;
+  margin-bottom: 2rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
