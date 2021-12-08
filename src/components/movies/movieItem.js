@@ -26,7 +26,9 @@ const MovieItem = ({ movie }) => {
               <use xlinkHref="/images/sprite.svg#icon-star"></use>
             </svg>
           </div>
-          <p className={classes.rating__text}>{movie.vote_average}</p>
+          <p className={classes.rating__text}>
+            {movie.vote_average.toFixed(1)}
+          </p>
         </div>
         <a className={classes.btn} href="/">
           <p className={classes.btn__text}>Watch now</p>

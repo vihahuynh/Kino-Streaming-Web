@@ -22,6 +22,7 @@
 }
 
 .details__grid {
+  width: 100%;
   color: var(--color-white);
   padding: 1rem;
   position: absolute;
@@ -63,13 +64,13 @@
 
   background: linear-gradient(
     to left bottom,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.6)
+    rgba(253, 112, 20, 0.4),
+    rgba(253, 112, 20, 0.4)
   );
   transform: skewX(-130deg) translateX(-130%);
 
   visibility: hidden;
-  transition: all 0.4s;
+  transition: all 0.5s;
 
   z-index: 0;
 }
@@ -85,8 +86,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: skewX(130deg) translate(-113%, -50%);
+  transform: skewX(130deg) translate(300%, 500%);
 
+  transition: all 0.5s;
   z-index: 10;
 }
 
@@ -105,4 +107,5 @@
 
 .movie-container:hover .play__btn {
   display: inline-block;
+  transform: skewX(130deg) translate(-113%, -50%);
 }

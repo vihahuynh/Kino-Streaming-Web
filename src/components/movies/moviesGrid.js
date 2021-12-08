@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import movieServices from "../../services/movies";
 import MovieGridItem from "./movieGridItem";
 
-import classes from "./movieList.module.css";
+import classes from "./moviesGrid.module.css";
 
 const MoviesGrid = ({ movie = true }) => {
   const [movies, setMovies] = useState([]);
@@ -20,8 +20,8 @@ const MoviesGrid = ({ movie = true }) => {
   }, [movie]);
 
   return (
-    <div className={classes.container}>
-      {movies.slice(0, 1).map((movie) => (
+    <div className={classes["movie-grid"]}>
+      {movies.map((movie) => (
         <MovieGridItem key={movie.id} movie={movie} />
       ))}
     </div>

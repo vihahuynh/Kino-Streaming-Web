@@ -12,7 +12,9 @@ const MovieGridItem = ({ movie }) => {
       <div className={classes.details}>
         <div className={classes.details__grid}>
           <p className={classes.details__title}>{movie.title || movie.name}</p>
-          <p className={classes.details__rating}>{movie.vote_average}</p>
+          <p className={classes.details__rating}>
+            {movie.vote_average.toFixed(1)}
+          </p>
           <p className={classes.details__year}>
             {movie.release_date
               ? movie.release_date.slice(0, 4)
