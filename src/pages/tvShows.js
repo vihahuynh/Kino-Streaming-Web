@@ -8,7 +8,7 @@ const tvShows = () => {
   return (
     <Wrapper>
       <div className={classes.movies__title}>
-        <h1>tvShows</h1>
+        <h1>tv shows</h1>
       </div>
       <MoviesGrid movie={false} />
     </Wrapper>
