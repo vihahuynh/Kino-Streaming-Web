@@ -16,7 +16,7 @@
 }
 
 .details {
-  width: 40vw;
+  width: 50vw;
   position: absolute;
   top: 17rem;
   left: 15rem;
@@ -30,7 +30,7 @@
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 4rem;
-  width: 80%;
+  width: 90%;
 }
 
 .info {

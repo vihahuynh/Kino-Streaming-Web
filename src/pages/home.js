@@ -1,5 +1,5 @@
 import React from "react";
-import MovieList from "../components/movies/movieList";
+import MovieList from "../components/movies/movieList/movieList";
 import Banner from "../components/banner/banner";
 import Wrapper from "../components/wrapper";
 

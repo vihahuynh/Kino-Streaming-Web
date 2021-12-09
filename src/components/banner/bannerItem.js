@@ -1,5 +1,7 @@
 import React from "react";
 import classes from "./bannerItem.module.css";
+import { Link } from "react-router-dom";
+
 require("dotenv").config();
 
 const BannerItem = ({ movie }) => {
@@ -33,18 +35,21 @@ const BannerItem = ({ movie }) => {
         </div>
         <p className={classes.overview}>{shortOverview}</p>
         <div>
-          <a className={`${classes.btn} ${classes["btn--play"]}`} href="/">
+          <Link
+            className={`${classes.btn} ${classes["btn--play"]}`}
+            to={`/movies/${movie.id}`}
+          >
             <svg>
               <use xlinkHref="/images/sprite.svg#icon-controller-play"></use>
             </svg>
             <span className={classes["btn__text"]}>Play now</span>
-          </a>
-          <a className={`${classes.btn} ${classes["btn--info"]}`} href="/">
+          </Link>
+          {/* <a className={`${classes.btn} ${classes["btn--info"]}`} href="/">
             <svg>
               <use xlinkHref="/images/sprite.svg#icon-info-with-circle"></use>
             </svg>
             <span className={classes["btn__text"]}>view info</span>
-          </a>
+          </a> */}
         </div>
       </div>
     </>

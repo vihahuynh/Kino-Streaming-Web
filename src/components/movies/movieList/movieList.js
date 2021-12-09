@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import movieServices from "../../services/movies";
-import trendingServices from "../../services/trending";
+import movieServices from "../../../services/movies";
+import trendingServices from "../../../services/trending";
 import MovieItem from "./movieItem";
 import Slider from "react-slick";
 
 import classes from "./movieList.module.css";
-import NextArrow from "../arrows/nextArrow";
-import PrevArrow from "../arrows/prevArrow";
+import NextArrow from "../../arrows/nextArrow";
+import PrevArrow from "../../arrows/prevArrow";
 
 const settings = {
   infinite: true,

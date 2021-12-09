@@ -3,6 +3,7 @@ import Home from "./pages/home";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Movies from "./pages/movies";
 import TVShows from "./pages/tvShows";
+import MoviePlay from "./pages/movie";
 import Navigation from "./components/navigation";
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
       <Switch>
         <Route path="/" exact>
           <Home />
+        </Route>
+        <Route path="/movies/:id">
+          <MoviePlay />
         </Route>
         <Route path="/movies">
           <Movies />

@@ -15,7 +15,7 @@ const getMovieDetails = (mediaType, id) => {
   const url = `${process.env.REACT_APP_API_URL}/${mediaType}/${id}?api_key=${process.env.REACT_APP_API_KEY}`;
   const request = axios.get(url);
   return request
-    .then((response) => response?.data?.results)
+    .then((response) => response?.data)
     .catch((err) => {
       throw err;
     });

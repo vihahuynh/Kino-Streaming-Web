@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import classes from "./movieGridItem.module.css";
 
 const MovieGridItem = ({ movie }) => {
@@ -23,11 +25,16 @@ const MovieGridItem = ({ movie }) => {
         </div>
       </div>
       <div className={classes.play}>
-        <a className={classes.play__btn} href="/">
+        <Link
+          className={classes.play__btn}
+          to={
+            movie.release_date ? `/movies/${movie.id}` : `/tvshows/${movie.id}`
+          }
+        >
           <svg className={classes.play__icon}>
             <use xlinkHref="/images/sprite.svg#icon-controller-play"></use>
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );

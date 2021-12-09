@@ -1,5 +1,5 @@
 import React from "react";
-import MoviesGrid from "../components/movies/moviesGrid";
+import MoviesGrid from "../components/movies/moviesGrid/moviesGrid";
 import Wrapper from "../components/wrapper";
 
 import classes from "./movies.module.css";
