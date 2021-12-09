@@ -3,7 +3,7 @@ import axios from "axios";
 const REACT_APP_API_URL = "https://api.themoviedb.org/3";
 const REACT_APP_API_KEY = "542875e8fd0a4ee32531acb890171761";
 
-const getMovieList = (mediaType, query) => {
+const getmovieCarousel = (mediaType, query) => {
   const url = `${REACT_APP_API_URL}/${mediaType}/${query}?api_key=${REACT_APP_API_KEY}`;
   const request = axios.get(url);
   return request
@@ -54,7 +54,7 @@ const getMovieCredits = (mediaType, id) => {
 };
 
 const services = {
-  getMovieList,
+  getmovieCarousel,
   getMovieDetails,
   getSimilarMovies,
   getRecommendMovies,

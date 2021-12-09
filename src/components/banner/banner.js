@@ -11,7 +11,7 @@ const Banner = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     const fetchMovies = async () => {
-      const response = await movieServices.getMovieList("movie", "popular");
+      const response = await movieServices.getmovieCarousel("movie", "popular");
       setMovies(response);
     };
     fetchMovies();

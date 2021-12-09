@@ -4,7 +4,7 @@ import trendingServices from "../../../services/trending";
 import MovieItem from "./movieItem";
 import Slider from "react-slick";
 
-import classes from "./movieList.module.css";
+import classes from "./movieCarousel.module.css";
 import NextArrow from "../../arrows/nextArrow";
 import PrevArrow from "../../arrows/prevArrow";
 
@@ -47,13 +47,13 @@ const settings = {
   ],
 };
 
-const MovieList = ({ name, query, trending = false, movie = true }) => {
+const MovieCarousel = ({ name, query, trending = false, movie = true }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       if (!trending) {
-        const response = await movieServices.getMovieList(
+        const response = await movieServices.getmovieCarousel(
           movie ? "movie" : "tv",
           query
         );
@@ -83,4 +83,4 @@ const MovieList = ({ name, query, trending = false, movie = true }) => {
   );
 };
 
-export default MovieList;
+export default MovieCarousel;

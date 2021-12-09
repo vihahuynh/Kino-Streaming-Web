@@ -9,7 +9,7 @@ const MoviesGrid = ({ movie = true }) => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const response = await movieServices.getMovieList(
+      const response = await movieServices.getmovieCarousel(
         movie ? "movie" : "tv",
         "popular"
       );
