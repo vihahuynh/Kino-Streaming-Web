@@ -1,9 +1,9 @@
 .cast {
-  background-color: var(--color-grey-dark);
+  background-color: var(--color-black);
   border: 1px solid transparent;
   padding: 1.5rem;
-  border-radius: 1rem;
-  width: 25rem;
+  border-radius: 1.8rem;
+  width: 20rem;
   text-decoration: none;
 
   display: flex;
@@ -13,10 +13,9 @@
 .cast__image {
   width: 5rem;
   height: 7rem;
-  border-radius: 1rem;
+  border-radius: 1.2rem;
   margin-right: 1.5rem;
 
-  overflow: hidden;
   transition: all 0.4s;
 }
 
@@ -32,6 +31,7 @@
 .cast__details h5 {
   margin: 0;
   color: var(--color-white);
+  font-size: 1.4rem;
 }
 
 .cast__details p {
@@ -44,5 +44,5 @@
 }
 
 .cast:hover .cast__image {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }

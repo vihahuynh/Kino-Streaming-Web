@@ -19,11 +19,14 @@ const CastGrid = ({ movie = true, id }) => {
   }, [movie, id]);
 
   return (
-    <ul className={classes["cast-container"]}>
-      {cast.slice(0, 6).map((c) => (
-        <CastItem key={cast.id} cast={c} />
-      ))}
-    </ul>
+    <div className={classes["cast-container"]}>
+      <h5>Cast</h5>
+      <ul className={classes["cast-list"]}>
+        {cast.slice(0, 6).map((c) => (
+          <CastItem key={cast.id} cast={c} />
+        ))}
+      </ul>
+    </div>
   );
 };
 

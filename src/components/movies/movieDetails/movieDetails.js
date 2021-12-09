@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import movieServices from "../../../services/movies";
 import CastGrid from "../../cast/castGrid";
 import Video from "../../video/video";
+import MovieList from "../movieList/movieList";
 
 import classes from "./movieDetails.module.css";
 
@@ -26,12 +27,17 @@ const MovieDetails = ({ id }) => {
       <div className={classes.movie__details}>
         <h2>{movie.title}</h2>
         <p>
-          <span>{movie.runtime} min</span>
+          <span>{movie.runtime} minutes</span>
           <span>Published on {movie.release_date}</span>
         </p>
         <p>{movie.overview}</p>
       </div>
-      <CastGrid id={movie.id} />
+      <div className={classes.movie__cast}>
+        <CastGrid id={movie.id} />
+      </div>
+      <div className={classes.movie__recommends}>
+        <MovieList id={id} />
+      </div>
     </div>
   );
 };

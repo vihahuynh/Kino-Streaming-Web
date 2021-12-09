@@ -1,0 +1,18 @@
+.movie-container {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+}
+
+.recommends {
+  background-color: var(--color-grey-dark);
+  border-radius: 3rem;
+  padding: 4rem 2rem;
+}
+
+.recommends h5 {
+  color: var(--color-white);
+}

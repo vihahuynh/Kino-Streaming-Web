@@ -2,10 +2,22 @@
   padding: 5rem 8rem;
   color: var(--color-grey-light);
   font-size: 1.4rem;
+  background-color: var(--color-black);
+
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, min-content);
+}
+
+.movie__video {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 }
 
 .movie__details {
-  margin-top: 4rem;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
 }
 
 .movie__details h2 {
@@ -19,4 +31,14 @@
 
 .movie__details span {
   margin-right: 4rem;
+}
+
+.movie__cast {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.movie__recommends {
+  grid-column: 2 / 3;
+  grid-row: 1 / -1;
 }
