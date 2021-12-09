@@ -19,8 +19,6 @@ const Banner = () => {
 
   return (
     <div className={classes.banner}>
-      <img className={classes.logo} alt="Logo" src="/images/logo.png" />
-
       <Carousel
         nextIcon={<NextArrow size="large" />}
         prevIcon={<PrevArrow size="large" />}

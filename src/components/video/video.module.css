@@ -2,6 +2,7 @@
 }
 
 .video iframe {
-  width: 70rem;
-  height: 38rem;
+  border-radius: 1rem;
+  width: 96rem;
+  height: 54rem;
 }

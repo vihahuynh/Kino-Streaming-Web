@@ -19,25 +19,33 @@ const MovieDetails = ({ id }) => {
   }, [id]);
 
   if (!movie) return <p>Movie not found</p>;
+
   return (
-    <div className={classes.movie}>
-      <div className={classes.movie__video}>
-        <Video id={id} />
+    <div className={classes.container}>
+      <div className={classes.movie}>
+        <div className={classes.movie__video}>
+          <Video id={id} />
+        </div>
+        <div className={classes.movie__details}>
+          <h2>{movie.title}</h2>
+          <p>
+            <span>{movie.runtime} minutes</span>
+            <span>Published on {movie.release_date}</span>
+          </p>
+          <p>{movie.overview}</p>
+        </div>
+        <div className={classes.movie__cast}>
+          <CastGrid id={movie.id} />
+        </div>
+        <div className={classes.movie__recommends}>
+          <MovieList id={id} />
+        </div>
       </div>
-      <div className={classes.movie__details}>
-        <h2>{movie.title}</h2>
-        <p>
-          <span>{movie.runtime} minutes</span>
-          <span>Published on {movie.release_date}</span>
-        </p>
-        <p>{movie.overview}</p>
-      </div>
-      <div className={classes.movie__cast}>
-        <CastGrid id={movie.id} />
-      </div>
-      <div className={classes.movie__recommends}>
-        <MovieList id={id} />
-      </div>
+      <img
+        className={classes.backdrop}
+        alt="Backdrop"
+        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+      />
     </div>
   );
 };

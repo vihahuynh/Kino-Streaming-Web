@@ -5,6 +5,7 @@ import Movies from "./pages/movies";
 import TVShows from "./pages/tvShows";
 import MoviePlay from "./pages/movie";
 import Navigation from "./components/navigation";
+import Logo from "./components/logo";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div className="nav">
         <Navigation />
       </div>
+      <Logo />
       <Switch>
         <Route path="/" exact>
           <Home />
