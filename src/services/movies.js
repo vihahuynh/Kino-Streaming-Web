@@ -1,8 +1,10 @@
 import axios from "axios";
-require("dotenv").config();
+
+const REACT_APP_API_URL = "https://api.themoviedb.org/3";
+const REACT_APP_API_KEY = "542875e8fd0a4ee32531acb890171761";
 
 const getMovieList = (mediaType, query) => {
-  const url = `${process.env.REACT_APP_API_URL}/${mediaType}/${query}?api_key=${process.env.REACT_APP_API_KEY}`;
+  const url = `${REACT_APP_API_URL}/${mediaType}/${query}?api_key=${REACT_APP_API_KEY}`;
   const request = axios.get(url);
   return request
     .then((reponse) => reponse?.data?.results)
@@ -12,7 +14,7 @@ const getMovieList = (mediaType, query) => {
 };
 
 const getMovieDetails = (mediaType, id) => {
-  const url = `${process.env.REACT_APP_API_URL}/${mediaType}/${id}?api_key=${process.env.REACT_APP_API_KEY}`;
+  const url = `${REACT_APP_API_URL}/${mediaType}/${id}?api_key=${REACT_APP_API_KEY}`;
   const request = axios.get(url);
   return request
     .then((response) => response?.data)
@@ -22,7 +24,7 @@ const getMovieDetails = (mediaType, id) => {
 };
 
 const getSimilarMovies = (mediaType, id) => {
-  const url = `${process.env.REACT_APP_API_URL}/${mediaType}/${id}/similar?api_key=${process.env.REACT_APP_API_KEY}`;
+  const url = `${REACT_APP_API_URL}/${mediaType}/${id}/similar?api_key=${REACT_APP_API_KEY}`;
   const request = axios.get(url);
   return request
     .then((response) => response?.data?.results)
@@ -32,7 +34,7 @@ const getSimilarMovies = (mediaType, id) => {
 };
 
 const getRecommendMovies = (mediaType, id) => {
-  const url = `${process.env.REACT_APP_API_URL}/${mediaType}/${id}/recommendations?api_key=${process.env.REACT_APP_API_KEY}`;
+  const url = `${REACT_APP_API_URL}/${mediaType}/${id}/recommendations?api_key=${REACT_APP_API_KEY}`;
   const request = axios.get(url);
   return request
     .then((response) => response?.data?.results)
@@ -42,7 +44,7 @@ const getRecommendMovies = (mediaType, id) => {
 };
 
 const getMovieCredits = (mediaType, id) => {
-  const url = `${process.env.REACT_APP_API_URL}/${mediaType}/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}`;
+  const url = `${REACT_APP_API_URL}/${mediaType}/${id}/credits?api_key=${REACT_APP_API_KEY}`;
   const request = axios.get(url);
   return request
     .then((response) => response?.data?.results)

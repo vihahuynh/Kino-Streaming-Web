@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
+import MovieDetails from "../components/movies/movieDetails/movieDetails";
 import Wrapper from "../components/wrapper";
 
 const MoviePlay = ({ isMovie = true }) => {
@@ -8,7 +9,7 @@ const MoviePlay = ({ isMovie = true }) => {
   return (
     <Wrapper>
       <div>
-        <h1>TEST</h1>
+        <MovieDetails id={id} />
       </div>
     </Wrapper>
   );

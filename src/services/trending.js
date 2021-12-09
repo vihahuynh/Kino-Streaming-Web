@@ -1,10 +1,12 @@
 // https://api.themoviedb.org/3/trending/movie/week?api_key=542875e8fd0a4ee32531acb890171761
 
 import axios from "axios";
-require("dotenv").config();
+
+const REACT_APP_API_URL = "https://api.themoviedb.org/3";
+const REACT_APP_API_KEY = "542875e8fd0a4ee32531acb890171761";
 
 const getTrending = (mediaType, time) => {
-  const url = `${process.env.REACT_APP_API_URL}/trending/${mediaType}/${time}?api_key=${process.env.REACT_APP_API_KEY}`;
+  const url = `${REACT_APP_API_URL}/trending/${mediaType}/${time}?api_key=${REACT_APP_API_KEY}`;
   const request = axios.get(url);
   return request
     .then((reponse) => reponse?.data?.results)

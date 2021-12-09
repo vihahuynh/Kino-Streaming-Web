@@ -1,0 +1,8 @@
+.video {
+  margin-left: 8rem;
+}
+
+.video iframe {
+  width: 80rem;
+  height: 45rem;
+}

@@ -79,9 +79,6 @@ const MovieList = ({ name, query, trending = false, movie = true }) => {
           <MovieItem key={movie.id} movie={movie} />
         ))}
       </Slider>
-      {/* <div className={classes.list}>
-        
-      </div> */}
     </div>
   );
 };
