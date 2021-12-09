@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./movieItem.module.css";
-import { Link } from "react-router-dom";
+import Button from "../../button/button";
 
 const MovieItem = ({ movie }) => {
   return (
@@ -31,14 +31,12 @@ const MovieItem = ({ movie }) => {
             {movie.vote_average.toFixed(1)}
           </p>
         </div>
-        <Link
-          className={classes.btn}
-          to={
+        <Button
+          link={
             movie.release_date ? `/movies/${movie.id}` : `/tvshows/${movie.id}`
           }
-        >
-          <p className={classes.btn__text}>Play now</p>
-        </Link>
+          text="Play now"
+        />
       </div>
     </div>
   );

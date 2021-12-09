@@ -1,0 +1,8 @@
+.cast-container {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+  margin: 0;
+  padding: 0;
+}

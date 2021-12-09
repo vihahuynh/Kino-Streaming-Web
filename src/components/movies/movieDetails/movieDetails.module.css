@@ -1,0 +1,22 @@
+.movie {
+  padding: 5rem 8rem;
+  color: var(--color-grey-light);
+  font-size: 1.4rem;
+}
+
+.movie__details {
+  margin-top: 4rem;
+}
+
+.movie__details h2 {
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.movie__details p {
+  margin: 2rem 0;
+}
+
+.movie__details span {
+  margin-right: 4rem;
+}

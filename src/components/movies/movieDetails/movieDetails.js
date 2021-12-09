@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import movieServices from "../../../services/movies";
+import CastGrid from "../../cast/castGrid";
 import Video from "../../video/video";
 
 import classes from "./movieDetails.module.css";
@@ -19,8 +20,18 @@ const MovieDetails = ({ id }) => {
   if (!movie) return <p>Movie not found</p>;
   return (
     <div className={classes.movie}>
-      <div className={classes.movie__header}></div>
-      <Video id={id} />
+      <div className={classes.movie__video}>
+        <Video id={id} />
+      </div>
+      <div className={classes.movie__details}>
+        <h2>{movie.title}</h2>
+        <p>
+          <span>{movie.runtime} min</span>
+          <span>Published on {movie.release_date}</span>
+        </p>
+        <p>{movie.overview}</p>
+      </div>
+      <CastGrid id={movie.id} />
     </div>
   );
 };

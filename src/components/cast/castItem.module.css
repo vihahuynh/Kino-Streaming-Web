@@ -1,0 +1,48 @@
+.cast {
+  background-color: var(--color-grey-dark);
+  border: 1px solid transparent;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: 25rem;
+  text-decoration: none;
+
+  display: flex;
+  transition: all 0.3s;
+}
+
+.cast__image {
+  width: 5rem;
+  height: 7rem;
+  border-radius: 1rem;
+  margin-right: 1.5rem;
+
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.cast__details {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  font-size: 1.2rem;
+}
+
+.cast__details h5 {
+  margin: 0;
+  color: var(--color-white);
+}
+
+.cast__details p {
+  color: var(--color-grey-light);
+}
+
+.cast:hover {
+  background-color: var(--color-black);
+  border: 1px solid var(--color-primary);
+}
+
+.cast:hover .cast__image {
+  transform: scale(1.15);
+}

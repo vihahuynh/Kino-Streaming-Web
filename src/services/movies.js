@@ -47,7 +47,7 @@ const getMovieCredits = (mediaType, id) => {
   const url = `${REACT_APP_API_URL}/${mediaType}/${id}/credits?api_key=${REACT_APP_API_KEY}`;
   const request = axios.get(url);
   return request
-    .then((response) => response?.data?.results)
+    .then((response) => response?.data?.cast)
     .catch((err) => {
       throw err;
     });
