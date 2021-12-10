@@ -13,10 +13,14 @@ const MovieListItem = ({ movie }) => {
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         />
         <div className={classes.movie__details}>
-          <h5>{movie.title}</h5>
+          <h5>{movie.title || movie.name}</h5>
           <p>
             <span>Rating: {movie.vote_average.toFixed(1)}/10</span>
-            <span>Release: {movie.release_date.slice(0, 4)}</span>
+            <span>
+              Release:{" "}
+              {movie.release_date?.slice(0, 4) ||
+                movie.first_air_date?.slice(0, 4)}
+            </span>
           </p>
         </div>
         <svg className={classes.movie__icon}>

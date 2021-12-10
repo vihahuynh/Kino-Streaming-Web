@@ -24,6 +24,9 @@ function App() {
         <Route path="/movies">
           <Movies />
         </Route>
+        <Route path="/tvshows/:id">
+          <MoviePlay isMovie={false} />
+        </Route>
         <Route path="/tvshows">
           <TVShows />
         </Route>

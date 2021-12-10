@@ -1,5 +1,5 @@
 .movie-container {
-  height: 60vh;
+  height: 35rem;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;

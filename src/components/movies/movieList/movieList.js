@@ -4,20 +4,20 @@ import MovieListItem from "./movieListItem";
 
 import classes from "./movieList.module.css";
 
-const MovieList = ({ movie = true, id }) => {
+const MovieList = ({ isMovie = true, id }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       const response = await movieServices.getSimilarMovies(
-        movie ? "movie" : "tv",
+        isMovie ? "movie" : "tv",
         id
       );
       setMovies(response);
     };
 
     fetchMovies();
-  }, [movie, id]);
+  }, [isMovie, id]);
 
   return (
     <div className={classes.recommends}>

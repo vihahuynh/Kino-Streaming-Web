@@ -9,7 +9,7 @@ const MoviePlay = ({ isMovie = true }) => {
   return (
     <Wrapper>
       <div>
-        <MovieDetails id={id} />
+        <MovieDetails id={id} isMovie={isMovie} />
       </div>
     </Wrapper>
   );

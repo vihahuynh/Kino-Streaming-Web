@@ -7,40 +7,48 @@ import GenreList from "./genreList";
 
 import classes from "./movieDetails.module.css";
 
-const MovieDetails = ({ id }) => {
+const MovieDetails = ({ id, isMovie }) => {
   const [movie, setMovie] = useState(null);
   useEffect(() => {
     const fetchMovie = async () => {
-      const response = await movieServices.getMovieDetails("movie", id);
-      console.log("response: ", response);
+      const response = await movieServices.getMovieDetails(
+        isMovie ? "movie" : "tv",
+        id
+      );
 
       if (response?.id?.toString() === id) setMovie(response);
     };
     fetchMovie();
-  }, [id]);
+  }, [id, isMovie]);
 
   if (!movie) return <p>Movie not found</p>;
+
+  const src = isMovie
+    ? `https://www.2embed.ru/embed/tmdb/movie?id=${id}`
+    : `https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=1&e=1`;
 
   return (
     <div className={classes.container}>
       <div className={classes.movie}>
         <div className={classes.movie__video}>
-          <Video id={id} />
+          <Video id={id} src={src} />
         </div>
         <div className={classes.movie__details}>
-          <h2>{movie.title}</h2>
+          <h2>{movie.title || movie.name}</h2>
           <p>
-            <span>{movie.runtime} minutes</span>
-            <span>Published on {movie.release_date}</span>
+            {isMovie && <span>{movie.runtime} minutes</span>}
+            <span>
+              Published on {movie.release_date || movie.first_air_date}
+            </span>
           </p>
           <p>{movie.overview}</p>
           <GenreList genres={movie.genres} />
         </div>
         <div className={classes.movie__cast}>
-          <CastGrid id={movie.id} />
+          <CastGrid id={movie.id} isMovie={isMovie} />
         </div>
         <div className={classes.movie__recommends}>
-          <MovieList id={id} />
+          <MovieList id={id} isMovie={isMovie} />
         </div>
       </div>
       <img

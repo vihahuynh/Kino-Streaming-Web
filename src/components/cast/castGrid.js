@@ -4,19 +4,19 @@ import CastItem from "./castItem";
 
 import classes from "./castGrid.module.css";
 
-const CastGrid = ({ movie = true, id }) => {
+const CastGrid = ({ isMovie = true, id }) => {
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
     const fetchCast = async () => {
       const response = await movieService.getMovieCredits(
-        movie ? "movie" : "tv",
+        isMovie ? "movie" : "tv",
         id
       );
       setCast(response);
     };
     fetchCast();
-  }, [movie, id]);
+  }, [isMovie, id]);
 
   return (
     <div className={classes["cast-container"]}>
