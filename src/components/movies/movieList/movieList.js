@@ -3,21 +3,23 @@ import movieServices from "../../../services/movies";
 import MovieListItem from "./movieListItem";
 
 import classes from "./movieList.module.css";
+import { useSelector } from "react-redux";
 
-const MovieList = ({ isMovie = true, id }) => {
+const MovieList = ({ id }) => {
+  const mediaType = useSelector((state) => state.movie.mediaType);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       const response = await movieServices.getSimilarMovies(
-        isMovie ? "movie" : "tv",
+        mediaType ? "movie" : "tv",
         id
       );
       setMovies(response);
     };
 
     fetchMovies();
-  }, [isMovie, id]);
+  }, [mediaType, id]);
 
   return (
     <div className={classes.recommends}>

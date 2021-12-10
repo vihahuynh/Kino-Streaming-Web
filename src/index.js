@@ -1,12 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import { createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
 import App from "./App";
+
 import "./index.css";
 
+import movieReducer from "./reducers/movie";
+import searchReducer from "./reducers/search";
+const reducer = combineReducers({ movie: movieReducer, search: searchReducer });
+const store = createStore(reducer);
+
+console.log(store.getState());
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );

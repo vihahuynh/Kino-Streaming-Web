@@ -3,20 +3,22 @@ import movieService from "../../services/movies";
 import CastItem from "./castItem";
 
 import classes from "./castGrid.module.css";
+import { useSelector } from "react-redux";
 
-const CastGrid = ({ isMovie = true, id }) => {
+const CastGrid = ({ id }) => {
+  const mediaType = useSelector((state) => state.movie.mediaType);
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
     const fetchCast = async () => {
       const response = await movieService.getMovieCredits(
-        isMovie ? "movie" : "tv",
+        mediaType ? "movie" : "tv",
         id
       );
       setCast(response);
     };
     fetchCast();
-  }, [isMovie, id]);
+  }, [mediaType, id]);
 
   return (
     <div className={classes["cast-container"]}>

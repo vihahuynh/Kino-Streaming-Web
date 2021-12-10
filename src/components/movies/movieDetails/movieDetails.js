@@ -1,29 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import movieServices from "../../../services/movies";
 import CastGrid from "../../cast/castGrid";
 import Video from "../../video/video";
 import MovieList from "../movieList/movieList";
 import GenreList from "./genreList";
 
+import { movieChange } from "../../../reducers/movie";
+
 import classes from "./movieDetails.module.css";
 
-const MovieDetails = ({ id, isMovie }) => {
-  const [movie, setMovie] = useState(null);
+const MovieDetails = ({ id }) => {
+  const movie = useSelector((state) => state.movie.movie);
+  const mediaType = useSelector((state) => state.movie.mediaType);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const fetchMovie = async () => {
       const response = await movieServices.getMovieDetails(
-        isMovie ? "movie" : "tv",
+        mediaType ? "movie" : "tv",
         id
       );
 
-      if (response?.id?.toString() === id) setMovie(response);
+      if (response?.id?.toString() === id) {
+        dispatch(movieChange(response));
+      }
     };
     fetchMovie();
-  }, [id, isMovie]);
+  }, [id, mediaType, dispatch]);
 
   if (!movie) return <p>Movie not found</p>;
 
-  const src = isMovie
+  const src = mediaType
     ? `https://www.2embed.ru/embed/tmdb/movie?id=${id}`
     : `https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=1&e=1`;
 
@@ -36,7 +44,7 @@ const MovieDetails = ({ id, isMovie }) => {
         <div className={classes.movie__details}>
           <h2>{movie.title || movie.name}</h2>
           <p>
-            {isMovie && <span>{movie.runtime} minutes</span>}
+            {mediaType && <span>{movie.runtime} minutes</span>}
             <span>
               Published on {movie.release_date || movie.first_air_date}
             </span>
@@ -45,10 +53,10 @@ const MovieDetails = ({ id, isMovie }) => {
           <GenreList genres={movie.genres} />
         </div>
         <div className={classes.movie__cast}>
-          <CastGrid id={movie.id} isMovie={isMovie} />
+          <CastGrid id={movie.id} mediaType={mediaType} />
         </div>
         <div className={classes.movie__recommends}>
-          <MovieList id={id} isMovie={isMovie} />
+          <MovieList id={id} mediaType={mediaType} />
         </div>
       </div>
       <img
