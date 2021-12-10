@@ -6,7 +6,7 @@ import classes from "./movieListItem.module.css";
 const MovieListItem = ({ movie }) => {
   return (
     <li className={classes["movie-container"]}>
-      <Link className={classes.movie} to="/">
+      <Link className={classes.movie} to={`/movies/${movie.id}`}>
         <img
           className={classes.movie__image}
           alt="Pose"

@@ -60,5 +60,7 @@
   transform: translateX(-50%);
   z-index: -5;
   height: 100%;
+  width: 100vw;
   opacity: 0.2;
+  object-fit: cover;
 }

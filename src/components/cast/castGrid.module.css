@@ -1,7 +1,7 @@
 .cast-list {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
 
   margin: 0;
   padding: 0;
