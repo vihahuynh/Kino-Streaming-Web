@@ -8,9 +8,9 @@
 }
 
 .recommends {
-  background-color: var(--color-black);
+  background-color: var(--color-black-opacity);
   border-radius: 3rem;
-  padding: 4rem 2rem;
+  padding: 4rem 0rem 4rem 2rem;
 }
 
 .recommends h5 {

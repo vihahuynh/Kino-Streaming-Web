@@ -1,5 +1,5 @@
 .cast {
-  background-color: var(--color-black);
+  background-color: var(--color-black-opacity);
   border: 1px solid transparent;
   padding: 1.5rem;
   border-radius: 1.8rem;

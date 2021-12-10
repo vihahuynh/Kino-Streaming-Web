@@ -19,6 +19,9 @@ const MovieListItem = ({ movie }) => {
             <span>Release: {movie.release_date.slice(0, 4)}</span>
           </p>
         </div>
+        <svg className={classes.movie__icon}>
+          <use xlinkHref="/images/sprite.svg#icon-arrow-long-right"></use>
+        </svg>
       </Link>
     </li>
   );
