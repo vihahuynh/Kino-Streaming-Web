@@ -3,6 +3,7 @@ import movieServices from "../../../services/movies";
 import CastGrid from "../../cast/castGrid";
 import Video from "../../video/video";
 import MovieList from "../movieList/movieList";
+import GenreList from "./genreList";
 
 import classes from "./movieDetails.module.css";
 
@@ -33,6 +34,7 @@ const MovieDetails = ({ id }) => {
             <span>Published on {movie.release_date}</span>
           </p>
           <p>{movie.overview}</p>
+          <GenreList genres={movie.genres} />
         </div>
         <div className={classes.movie__cast}>
           <CastGrid id={movie.id} />

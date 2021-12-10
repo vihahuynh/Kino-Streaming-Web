@@ -43,6 +43,7 @@
 
 .movie__details p {
   color: var(--color-grey-light);
+  opacity: 0.75;
   width: 100%;
 
   display: flex;

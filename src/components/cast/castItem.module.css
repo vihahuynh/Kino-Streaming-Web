@@ -36,6 +36,7 @@
 
 .cast__details p {
   color: var(--color-grey-light);
+  opacity: 0.75;
 }
 
 .cast:hover {
