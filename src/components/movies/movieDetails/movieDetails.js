@@ -5,6 +5,7 @@ import CastGrid from "../../cast/castGrid";
 import Video from "../../video/video";
 import MovieList from "../movieList/movieList";
 import GenreList from "./genreList";
+import Stars from "../../stars/stars";
 
 import { movieChange } from "../../../reducers/movie";
 
@@ -49,6 +50,7 @@ const MovieDetails = ({ id }) => {
               Published on {movie.release_date || movie.first_air_date}
             </span>
           </p>
+          <Stars rating={movie.vote_average} />
           <p>{movie.overview}</p>
           <GenreList genres={movie.genres} />
         </div>

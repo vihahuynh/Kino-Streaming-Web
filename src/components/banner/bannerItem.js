@@ -2,8 +2,6 @@ import React from "react";
 import classes from "./bannerItem.module.css";
 import { Link } from "react-router-dom";
 
-require("dotenv").config();
-
 const BannerItem = ({ movie }) => {
   let shortOverview = movie.overview.split(" ").slice(0, 50).join(" ");
   shortOverview = shortOverview.slice(-1).includes(".")

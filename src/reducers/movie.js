@@ -1,5 +1,5 @@
 const init = {
-  mediaType: false,
+  mediaType: true,
   movie: null,
 };
 

@@ -53,7 +53,7 @@ const MovieCarousel = ({ name, query, trending = false, movie = true }) => {
   useEffect(() => {
     const fetchMovies = async () => {
       if (!trending) {
-        const response = await movieServices.getmovieCarousel(
+        const response = await movieServices.getMovieCarousel(
           movie ? "movie" : "tv",
           query
         );
