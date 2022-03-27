@@ -6,6 +6,7 @@ import TVShows from "./pages/tvShows";
 import MoviePlay from "./pages/movie";
 import Navigation from "./components/navigation";
 import Logo from "./components/logo";
+import NotFound from "./pages/404NotFound";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path="/tvshows">
           <TVShows />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </BrowserRouter>
