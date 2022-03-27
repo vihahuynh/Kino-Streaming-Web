@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import movieServices from "../../../services/movies";
 import CastGrid from "../../cast/castGrid";
@@ -27,6 +27,7 @@ const MovieDetails = ({ id }) => {
         dispatch(movieChange(response));
       }
     };
+
     fetchMovie();
   }, [id, mediaType, dispatch]);
 

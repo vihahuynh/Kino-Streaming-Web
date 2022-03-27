@@ -8,9 +8,7 @@ const MoviePlay = () => {
 
   return (
     <Wrapper>
-      <div>
-        <MovieDetails id={id} />
-      </div>
+      <MovieDetails id={id} />
     </Wrapper>
   );
 };

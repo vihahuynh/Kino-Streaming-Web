@@ -6,16 +6,21 @@ import { Carousel } from "react-bootstrap";
 import BannerItem from "./bannerItem";
 import NextArrow from "../arrows/nextArrow";
 import PrevArrow from "../arrows/prevArrow";
+import Loading from "../loading";
 
 const Banner = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     const fetchMovies = async () => {
       const response = await movieServices.getMovieCarousel("movie", "popular");
       setMovies(response);
+      setTimeout(() => setIsLoading(false), 400);
     };
     fetchMovies();
   }, []);
+
+  if (isLoading) return <Loading height="100vh" />;
 
   return (
     <div className={classes.banner}>

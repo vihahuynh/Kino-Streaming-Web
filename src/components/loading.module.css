@@ -1,0 +1,24 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  background-color: var(--color-grey-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s;
+}
+
+.loading__icon {
+  animation: spin 1.5s linear infinite;
+  height: 5rem;
+  width: 5rem;
+  fill: var(--color-primary);
+}

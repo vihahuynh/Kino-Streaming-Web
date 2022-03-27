@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import classes from "./movieCarousel.module.css";
 import NextArrow from "../../arrows/nextArrow";
 import PrevArrow from "../../arrows/prevArrow";
+import Loading from "../../loading";
 
 const settings = {
   infinite: true,
@@ -48,6 +49,7 @@ const settings = {
 };
 
 const MovieCarousel = ({ name, query, trending = false, movie = true }) => {
+  const [isLoading, setIsLoading] = useState(true);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -65,10 +67,13 @@ const MovieCarousel = ({ name, query, trending = false, movie = true }) => {
         );
         setMovies(response);
       }
+      setTimeout(() => setIsLoading(false), 300);
     };
 
     fetchMovies();
   }, [query, trending, movie]);
+
+  if (isLoading) return <Loading height="20vh" />;
 
   return (
     <div className={classes.container}>

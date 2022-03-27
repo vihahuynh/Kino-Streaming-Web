@@ -29,6 +29,7 @@ const MovieList = ({ id }) => {
           <MovieListItem key={movie.id} movie={movie} />
         ))}
       </ul>
+      )
     </div>
   );
 };

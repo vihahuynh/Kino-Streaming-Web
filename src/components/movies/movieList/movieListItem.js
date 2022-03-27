@@ -9,7 +9,7 @@ const MovieListItem = ({ movie }) => {
       <Link className={classes.movie} to={`/movies/${movie.id}`}>
         <img
           className={classes.movie__image}
-          alt="Pose"
+          alt=""
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         />
         <div className={classes.movie__details}>
