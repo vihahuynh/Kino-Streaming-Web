@@ -15,7 +15,7 @@ const Banner = () => {
     const fetchMovies = async () => {
       const response = await movieServices.getMovieCarousel("movie", "popular");
       setMovies(response);
-      setTimeout(() => setIsLoading(false), 400);
+      setTimeout(() => setIsLoading(false), 300);
     };
     fetchMovies();
   }, []);

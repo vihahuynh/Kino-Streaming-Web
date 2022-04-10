@@ -21,8 +21,8 @@ const MovieGridItem = ({ movie }) => {
           </p>
           <p className={classes.details__year}>
             {movie.release_date
-              ? movie.release_date.slice(0, 4)
-              : movie?.first_air_date.slice(0, 4)}
+              ? movie?.release_date?.slice(0, 4)
+              : movie?.first_air_date?.slice(0, 4)}
           </p>
         </div>
       </div>

@@ -67,7 +67,7 @@ const MovieCarousel = ({ name, query, trending = false, movie = true }) => {
         );
         setMovies(response);
       }
-      setTimeout(() => setIsLoading(false), 300);
+      setTimeout(() => setIsLoading(false), 200);
     };
 
     fetchMovies();
