@@ -1,0 +1,33 @@
+.container {
+  margin-bottom: 3rem;
+}
+
+.input {
+  position: absolute;
+  margin-left: 10rem;
+  display: block;
+  width: 25%;
+  padding: 1rem 2rem 0.5rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0.5rem;
+  background-color: var(--color-grey);
+  color: var(--color-white);
+  transition: all 0.3s;
+}
+
+/* .input:hover {
+  box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.15);
+} */
+
+.input:focus {
+  outline: none;
+  /* border-bottom: 2.5px solid var(--color-grey-light); */
+  /* box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.15); */
+}
+
+.input::placeholder {
+  color: var(--color-white);
+  /* font-family: "Nunito", sans-serif; */
+}

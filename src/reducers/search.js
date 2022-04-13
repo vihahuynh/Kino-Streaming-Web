@@ -1,9 +1,15 @@
-const searchReducer = (state = "ALL", action) => {
+const init = {
+  filter: "",
+};
+
+const searchReducer = (state = init, action) => {
   switch (action.type) {
     case "SET_FILTER":
-      return action.filter;
+      return { filter: action.filter };
+    case "SET_DEFAULT":
+      return init;
     default:
-      return state;
+      return init;
   }
 };
 
@@ -12,6 +18,10 @@ export const filterChange = (filter) => {
     type: "SET_FILTER",
     filter,
   };
+};
+
+export const filterRemove = () => {
+  return { type: "SET_DEFAULT", filter: "" };
 };
 
 export default searchReducer;
