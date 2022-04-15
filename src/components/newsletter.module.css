@@ -23,18 +23,18 @@
 
 .deco--top {
   position: absolute;
-  top: -85%;
-  left: 15rem;
-  width: 40rem;
-  height: 40rem;
+  top: -60%;
+  left: 7rem;
+  width: 30rem;
+  height: 30rem;
 }
 
 .deco--bottom {
   position: absolute;
-  bottom: -5%;
-  right: 15rem;
-  /* width: 40rem;
-  height: 40rem; */
+  bottom: -70%;
+  right: 5rem;
+  width: 40rem;
+  height: 40rem;
 }
 
 .input {
@@ -74,4 +74,48 @@
 
 .btn:active {
   transform: scale(1);
+}
+
+@media (max-width: 56.25em) {
+  .container {
+    padding: 5rem 15rem;
+  }
+
+  .deco--top {
+    position: absolute;
+    top: -40%;
+    left: 5rem;
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .deco--bottom {
+    position: absolute;
+    bottom: -35%;
+    right: 0rem;
+    width: 18rem;
+    height: 18rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .container {
+    padding: 5rem 10rem;
+  }
+
+  .deco--top {
+    position: absolute;
+    top: -25%;
+    left: 7rem;
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .deco--bottom {
+    position: absolute;
+    bottom: -20%;
+    right: -4rem;
+    width: 15rem;
+    height: 15rem;
+  }
 }
