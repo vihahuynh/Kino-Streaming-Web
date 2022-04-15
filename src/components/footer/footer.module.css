@@ -43,3 +43,15 @@ h5 {
   font-weight: 700;
   margin-bottom: 2rem;
 }
+
+@media (max-width: 56.25em) {
+  .footer {
+    padding: 4rem 8rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .footer {
+    padding: 4rem 5rem;
+  }
+}

@@ -12,3 +12,15 @@
 p {
   margin: 0;
 }
+
+@media (max-width: 56.25em) {
+  .copyright {
+    padding: 1.5rem 5rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .copyright {
+    padding: 1.5rem 3rem;
+  }
+}
