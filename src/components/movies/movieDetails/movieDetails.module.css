@@ -64,3 +64,32 @@
   opacity: 0.2;
   object-fit: cover;
 }
+
+@media (max-width: 56.25em) {
+}
+
+@media (max-width: 37.5em) {
+  .movie {
+    padding: 13rem 5rem 5rem 5rem;
+  }
+
+  .movie__video {
+    margin-bottom: 4rem;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+  .movie__recommends {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+
+  .movie__details {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+
+  .movie__cast {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+  }
+}
