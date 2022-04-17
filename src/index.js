@@ -11,7 +11,6 @@ import searchReducer from "./reducers/search";
 const reducer = combineReducers({ movie: movieReducer, search: searchReducer });
 const store = createStore(reducer);
 
-console.log(store.getState());
 ReactDOM.render(
   <Provider store={store}>
     <App />
