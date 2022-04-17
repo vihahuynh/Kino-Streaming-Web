@@ -15,10 +15,10 @@ const Newsletter = () => {
   return (
     <div className={classes.container}>
       <svg className={classes["deco--top"]}>
-        <use xlinkHref="/sprite.svg#icon-flower"></use>
+        <use xlinkHref="%PUBLIC_URL%/sprite.svg#icon-flower"></use>
       </svg>
       <svg className={classes["deco--bottom"]}>
-        <use xlinkHref="/sprite.svg#icon-flower"></use>
+        <use xlinkHref="%PUBLIC_URL%/sprite.svg#icon-flower"></use>
       </svg>
       <h3 className={classes.title}>
         Subscribe our newsletter for newest movies updateds

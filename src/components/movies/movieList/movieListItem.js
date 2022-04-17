@@ -24,7 +24,7 @@ const MovieListItem = ({ movie }) => {
           </p>
         </div>
         <svg className={classes.movie__icon}>
-          <use xlinkHref="/sprite.svg#icon-arrow-long-right"></use>
+          <use xlinkHref="%PUBLIC_URL%/sprite.svg#icon-arrow-long-right"></use>
         </svg>
       </Link>
     </li>
