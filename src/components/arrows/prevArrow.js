@@ -14,7 +14,9 @@ const PrevArrow = (props) => {
       onClick={props.onClick}
     >
       <svg className={styles}>
-        <use xlinkHref="images/sprite.svg#icon-chevron-left"></use>
+        <use
+          xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#icon-chevron-left`}
+        ></use>
       </svg>
     </div>
   );

@@ -5,7 +5,9 @@ const Loading = ({ height }) => {
   return (
     <div className={classes.loading} style={{ height: height }}>
       <svg className={classes.loading__icon}>
-        <use xlinkHref="images/sprite.svg#icon-spinner6"></use>
+        <use
+          xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#icon-spinner6`}
+        ></use>
       </svg>
     </div>
   );

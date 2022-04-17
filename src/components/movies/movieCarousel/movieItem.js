@@ -24,7 +24,9 @@ const MovieItem = ({ movie }) => {
         <div className={classes.rating}>
           <div className={classes["rating__icon-container"]}>
             <svg className={classes.rating__icon}>
-              <use xlinkHref="images/sprite.svg#icon-star"></use>
+              <use
+                xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#icon-star`}
+              ></use>
             </svg>
           </div>
           <p className={classes.rating__text}>
