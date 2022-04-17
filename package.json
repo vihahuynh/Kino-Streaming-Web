@@ -2,7 +2,7 @@
   "name": "kino-streaming-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/vihahuynh/Kino-Streaming-Web/build",
+  "homepage": "https://github.com/vihahuynh/Kino-Streaming-Web",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.0",
     "@testing-library/react": "^11.2.7",
