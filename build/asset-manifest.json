@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Kino-Streaming-Web/static/css/main.9ea9d23e.chunk.css",
-    "main.js": "/Kino-Streaming-Web/static/js/main.1c9e89c4.chunk.js",
-    "main.js.map": "/Kino-Streaming-Web/static/js/main.1c9e89c4.chunk.js.map",
-    "runtime-main.js": "/Kino-Streaming-Web/static/js/runtime-main.af7f6cd0.js",
-    "runtime-main.js.map": "/Kino-Streaming-Web/static/js/runtime-main.af7f6cd0.js.map",
-    "static/js/2.fb8e78f2.chunk.js": "/Kino-Streaming-Web/static/js/2.fb8e78f2.chunk.js",
-    "static/js/2.fb8e78f2.chunk.js.map": "/Kino-Streaming-Web/static/js/2.fb8e78f2.chunk.js.map",
-    "index.html": "/Kino-Streaming-Web/index.html",
-    "static/css/main.9ea9d23e.chunk.css.map": "/Kino-Streaming-Web/static/css/main.9ea9d23e.chunk.css.map",
-    "static/js/2.fb8e78f2.chunk.js.LICENSE.txt": "/Kino-Streaming-Web/static/js/2.fb8e78f2.chunk.js.LICENSE.txt",
-    "static/media/movies.module.css": "/Kino-Streaming-Web/static/media/posters-wall.420b4ba9.jpg"
+    "main.css": "/static/css/main.9742ef32.chunk.css",
+    "main.js": "/static/js/main.1c9e89c4.chunk.js",
+    "main.js.map": "/static/js/main.1c9e89c4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cb71cb0a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cb71cb0a.js.map",
+    "static/js/2.fb8e78f2.chunk.js": "/static/js/2.fb8e78f2.chunk.js",
+    "static/js/2.fb8e78f2.chunk.js.map": "/static/js/2.fb8e78f2.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.9742ef32.chunk.css.map": "/static/css/main.9742ef32.chunk.css.map",
+    "static/js/2.fb8e78f2.chunk.js.LICENSE.txt": "/static/js/2.fb8e78f2.chunk.js.LICENSE.txt",
+    "static/media/movies.module.css": "/static/media/posters-wall.420b4ba9.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.af7f6cd0.js",
+    "static/js/runtime-main.cb71cb0a.js",
     "static/js/2.fb8e78f2.chunk.js",
-    "static/css/main.9ea9d23e.chunk.css",
+    "static/css/main.9742ef32.chunk.css",
     "static/js/main.1c9e89c4.chunk.js"
   ]
 }
