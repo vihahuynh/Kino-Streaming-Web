@@ -32,7 +32,7 @@ const MovieGridItem = ({ movie }) => {
           to={mediaType ? `/movies/${movie.id}` : `/tvshows/${movie.id}`}
         >
           <svg className={classes.play__icon}>
-            <use xlinkHref="/images/sprite.svg#icon-controller-play"></use>
+            <use xlinkHref="/sprite.svg#icon-controller-play"></use>
           </svg>
         </Link>
       </div>

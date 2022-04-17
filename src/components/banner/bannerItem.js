@@ -26,7 +26,7 @@ const BannerItem = ({ movie }) => {
           <span className={classes.info}>{movie.vote_average}/10</span>
           <span className={classes.info}>
             <svg>
-              <use xlinkHref="/images/sprite.svg#icon-dot-single"></use>
+              <use xlinkHref="/sprite.svg#icon-dot-single"></use>
             </svg>
           </span>
           <span className={classes.info}>{movie.release_date.slice(0, 4)}</span>
@@ -38,13 +38,13 @@ const BannerItem = ({ movie }) => {
             to={`/movies/${movie.id}`}
           >
             <svg>
-              <use xlinkHref="/images/sprite.svg#icon-controller-play"></use>
+              <use xlinkHref="/sprite.svg#icon-controller-play"></use>
             </svg>
             <span className={classes["btn__text"]}>Play now</span>
           </Link>
           {/* <a className={`${classes.btn} ${classes["btn--info"]}`} href="/">
             <svg>
-              <use xlinkHref="/images/sprite.svg#icon-info-with-circle"></use>
+              <use xlinkHref="/sprite.svg#icon-info-with-circle"></use>
             </svg>
             <span className={classes["btn__text"]}>view info</span>
           </a> */}

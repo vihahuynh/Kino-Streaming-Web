@@ -5,7 +5,7 @@ import classes from "./stars.module.css";
 const Star = ({ type }) => {
   return (
     <svg className={classes.star}>
-      <use xlinkHref={`/images/sprite.svg#icon-star-${type}`}></use>
+      <use xlinkHref={`/sprite.svg#icon-star-${type}`}></use>
     </svg>
   );
 };
@@ -15,7 +15,7 @@ const Star = ({ type }) => {
 //       <img
 //         className={classes.star}
 //         alt={`star-${type}`}
-//         src={`/images/star-${type}.svg`}
+//         src={`/star-${type}.svg`}
 //       />
 //     );
 //   };
