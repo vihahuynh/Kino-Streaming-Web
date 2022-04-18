@@ -50,3 +50,27 @@
 .btn:hover .btn__text {
   color: var(--color-white);
 }
+
+@media (max-width: 56.25em) {
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 0.5rem 1.2rem;
+  }
+
+  .btn__text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 0.3rem 1rem;
+  }
+
+  .btn__text {
+    font-size: 0.8rem;
+  }
+}

@@ -71,7 +71,11 @@ const Footer = () => {
     <>
       <div className={classes.footer}>
         <div className={classes.footer__social}>
-          <img className={classes.logo} alt="Logo" src="images/kino.png" />
+          <img
+            className={classes.logo}
+            alt="Logo"
+            src={`${process.env.PUBLIC_URL}//kino.png`}
+          />
           <h5>Follow us</h5>
           <div>
             <IconItem icon="icon-facebook" />

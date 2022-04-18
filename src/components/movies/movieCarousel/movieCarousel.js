@@ -21,11 +21,20 @@ const settings = {
   nextArrow: <NextArrow size="small" />,
   prevArrow: <PrevArrow size="small" />,
   responsive: [
+    // {
+    //   breakpoint: 1200,
+    //   settings: {
+    //     slidesToShow: 3,
+    //     slidesToScroll: 3,
+    //     infinite: true,
+    //     dots: true,
+    //   },
+    // },
     {
       breakpoint: 1200,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 2,
+        slidesToScroll: 2,
         infinite: true,
         dots: true,
       },
@@ -33,16 +42,29 @@ const settings = {
     {
       breakpoint: 900,
       settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      },
+    },
+    {
+      breakpoint: 780,
+      settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
-        initialSlide: 2,
       },
     },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      },
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
       },
     },
   ],
