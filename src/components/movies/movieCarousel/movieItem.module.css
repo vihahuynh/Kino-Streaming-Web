@@ -102,7 +102,7 @@
   }
 
   .details {
-    width: 18rem;
+    width: 12rem;
     margin: 0rem;
     font-size: 1rem;
   }
@@ -154,13 +154,13 @@
   }
 
   .details {
-    width: 15rem;
+    width: 12rem;
     margin: 0rem;
     font-size: 0.8rem;
   }
 
   .title {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 700;
   }
 

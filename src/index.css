@@ -66,10 +66,17 @@ code {
   html {
     font-size: 55%;
   }
+  .nav {
+    right: 8rem;
+  }
 }
 
 @media (max-width: 37.5em) {
   html {
     font-size: 40%;
+  }
+
+  .nav {
+    right: 7rem;
   }
 }

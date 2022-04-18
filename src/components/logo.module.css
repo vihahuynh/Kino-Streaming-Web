@@ -6,3 +6,15 @@
   height: 6rem;
   z-index: 1;
 }
+
+@media (max-width: 56.25em) {
+  .logo {
+    left: 8rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .logo {
+    left: 7rem;
+  }
+}
