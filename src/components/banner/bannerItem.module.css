@@ -156,8 +156,8 @@
 
 @media (max-width: 37.5em) {
   .heading {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
   .poster {
@@ -168,10 +168,30 @@
   .details {
     top: 12rem;
     left: 8rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .overview {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    margin-right: 2rem;
+    padding: 0.3rem 1rem;
+  }
+
+  .btn svg {
+    position: relative;
+    top: -1px;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    z-index: 1;
+  }
+
+  .btn__text {
+    font-size: 1rem;
   }
 }
