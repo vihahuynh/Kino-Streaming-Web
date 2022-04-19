@@ -109,3 +109,16 @@
   display: inline-block;
   transform: skewX(130deg) translate(-113%, -50%);
 }
+
+@media (max-width: 56.25em) {
+}
+
+@media (max-width: 37.5em) {
+  .movie-container {
+    width: 12rem;
+    height: 15rem;
+  }
+  .details__title {
+    font-size: 1rem;
+  }
+}

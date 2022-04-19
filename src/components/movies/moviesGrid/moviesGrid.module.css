@@ -4,3 +4,13 @@
   grid-row-gap: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }
+
+@media (max-width: 56.25em) {
+}
+
+@media (max-width: 37.5em) {
+  .movie-grid {
+    padding: 2rem 7rem 7rem;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+}
