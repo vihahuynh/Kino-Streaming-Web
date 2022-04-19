@@ -10,3 +10,12 @@
 .cast-container h5 {
   color: var(--color-white);
 }
+
+@media (max-width: 56.25em) {
+}
+
+@media (max-width: 37.5em) {
+  .cast-list {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}

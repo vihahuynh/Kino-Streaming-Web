@@ -71,10 +71,11 @@
 @media (max-width: 37.5em) {
   .movie {
     padding: 13rem 5rem 5rem 5rem;
+    grid-gap: 1rem;
   }
 
   .movie__video {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     grid-column: 1 / -1;
     grid-row: 1 / 2;
   }

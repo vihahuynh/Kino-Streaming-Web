@@ -47,3 +47,12 @@
 .cast:hover .cast__image {
   transform: scale(1.1);
 }
+
+@media (max-width: 56.25em) {
+}
+
+@media (max-width: 37.5em) {
+  .cast {
+    width: 20rem;
+  }
+}

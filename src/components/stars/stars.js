@@ -5,20 +5,12 @@ import classes from "./stars.module.css";
 const Star = ({ type }) => {
   return (
     <svg className={classes.star}>
-      <use xlinkHref={`/sprite.svg#icon-star-${type}`}></use>
+      <use
+        xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#icon-star-${type}`}
+      ></use>
     </svg>
   );
 };
-
-// const Star = ({ type }) => {
-//     return (
-//       <img
-//         className={classes.star}
-//         alt={`star-${type}`}
-//         src={`/star-${type}.svg`}
-//       />
-//     );
-//   };
 
 const Stars = ({ rating }) => {
   const roundStar = Math.trunc(rating);
