@@ -31,3 +31,18 @@
   color: var(--color-white);
   /* font-family: "Nunito", sans-serif; */
 }
+
+@media (max-width: 56.25em) {
+  .input {
+    margin-left: 8rem;
+    width: 35%;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .input {
+    margin-left: 7rem;
+    width: 45%;
+    padding: 0.7rem 1.5rem 0.4rem 1.5rem;
+  }
+}

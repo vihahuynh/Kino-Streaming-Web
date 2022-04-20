@@ -7,6 +7,7 @@ import Loading from "../components/loading";
 import { mediaTypeChange } from "../reducers/movie";
 
 import classes from "./movies.module.css";
+import SearchBar from "../components/search/search";
 
 const Movies = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const Movies = () => {
       <div className={classes.movies__title}>
         <h1>Movies</h1>
       </div>
+      <SearchBar />
       {isLoading ? <Loading height="70vh" /> : <MoviesGrid />}
     </Wrapper>
   );
