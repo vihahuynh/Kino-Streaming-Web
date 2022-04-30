@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import MoviesGrid from "../components/movies/moviesGrid/moviesGrid";
 import Wrapper from "../components/wrapper";
 import Loading from "../components/loading";
+import SeachBar from "../components/search/search";
 
 import { mediaTypeChange } from "../reducers/movie";
 
@@ -22,6 +23,7 @@ const TVShows = () => {
       <div className={classes.movies__title}>
         <h1>tv shows</h1>
       </div>
+      <SeachBar />
       {isLoading ? <Loading height="70vh" /> : <MoviesGrid />}
     </Wrapper>
   );
