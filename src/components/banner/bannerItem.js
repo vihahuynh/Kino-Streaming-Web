@@ -46,12 +46,6 @@ const BannerItem = ({ movie }) => {
             </svg>
             <span className={classes["btn__text"]}>Play now</span>
           </Link>
-          {/* <a className={`${classes.btn} ${classes["btn--info"]}`} href="/">
-            <svg>
-              <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#icon-info-with-circle`}></use>
-            </svg>
-            <span className={classes["btn__text"]}>view info</span>
-          </a> */}
         </div>
       </div>
     </>

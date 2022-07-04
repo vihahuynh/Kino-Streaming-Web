@@ -7,14 +7,23 @@ import BannerItem from "./bannerItem";
 import NextArrow from "../arrows/nextArrow";
 import PrevArrow from "../arrows/prevArrow";
 import Loading from "../loading";
+import Popup from "../popup/popup";
 
 const Banner = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     const fetchMovies = async () => {
-      const response = await movieServices.getMovieCarousel("movie", "popular");
-      setMovies(response);
+      try {
+        const response = await movieServices.getMovieCarousel(
+          "movie",
+          "popula"
+        );
+        setMovies(response);
+      } catch (err) {
+        console.log(err.message);
+      }
       setTimeout(() => setIsLoading(false), 300);
     };
     fetchMovies();

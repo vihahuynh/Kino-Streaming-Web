@@ -1,0 +1,36 @@
+.container {
+  padding-top: 12rem;
+  margin: 0 10rem;
+}
+.message {
+  position: relative;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+  padding: 2rem;
+  border-radius: 1rem;
+  z-index: 3;
+  animation: moveFromRight 0.7s ease;
+  transform: all 0.5s;
+}
+
+.error {
+  border: var(--color-primary-dark) solid 0.2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-primary-dark);
+}
+
+.info {
+  background-color: var(--color-primary-light);
+  color: black;
+}
+
+@keyframes moveFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

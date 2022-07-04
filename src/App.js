@@ -4,17 +4,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Movies from "./pages/movies";
 import TVShows from "./pages/tvShows";
 import MoviePlay from "./pages/movie";
-import Navigation from "./components/navigation";
-import Logo from "./components/logo";
 import NotFound from "./pages/404NotFound";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="nav">
-        <Navigation />
-      </div>
-      <Logo />
       <Switch>
         <Route path="/" exact>
           <Home />

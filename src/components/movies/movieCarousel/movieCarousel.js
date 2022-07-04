@@ -21,15 +21,6 @@ const settings = {
   nextArrow: <NextArrow size="small" />,
   prevArrow: <PrevArrow size="small" />,
   responsive: [
-    // {
-    //   breakpoint: 1200,
-    //   settings: {
-    //     slidesToShow: 3,
-    //     slidesToScroll: 3,
-    //     infinite: true,
-    //     dots: true,
-    //   },
-    // },
     {
       breakpoint: 1200,
       settings: {
@@ -76,18 +67,22 @@ const MovieCarousel = ({ name, query, trending = false, movie = true }) => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      if (!trending) {
-        const response = await movieServices.getMovieCarousel(
-          movie ? "movie" : "tv",
-          query
-        );
-        setMovies(response);
-      } else {
-        const response = await trendingServices.getTrending(
-          movie ? "movie" : "tv",
-          "week"
-        );
-        setMovies(response);
+      try {
+        if (!trending) {
+          const response = await movieServices.getMovieCarousel(
+            movie ? "movie" : "tv",
+            query
+          );
+          setMovies(response);
+        } else {
+          const response = await trendingServices.getTrending(
+            movie ? "movie" : "tv",
+            "week"
+          );
+          setMovies(response);
+        }
+      } catch (err) {
+        console.log(err.message);
       }
       setTimeout(() => setIsLoading(false), 200);
     };

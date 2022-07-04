@@ -56,7 +56,7 @@ const MovieDetails = ({ id }) => {
           <GenreList genres={movie.genres} />
         </div>
         <div className={classes.movie__cast}>
-          <CastGrid id={movie.id} mediaType={mediaType} />
+          <CastGrid key={movie.id} mediaType={mediaType} />
         </div>
         <div className={classes.movie__recommends}>
           <MovieList id={id} mediaType={mediaType} />
