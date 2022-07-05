@@ -6,6 +6,7 @@ import classes from "./movieGridItem.module.css";
 
 const MovieGridItem = ({ movie }) => {
   const mediaType = useSelector((state) => state.movie.mediaType);
+
   return (
     <div className={classes["movie-container"]}>
       <img

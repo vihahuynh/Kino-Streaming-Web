@@ -11,11 +11,15 @@ const CastGrid = ({ id }) => {
 
   useEffect(() => {
     const fetchCast = async () => {
-      const response = await movieService.getMovieCredits(
-        mediaType ? "movie" : "tv",
-        id
-      );
-      setCast(response);
+      try {
+        const response = await movieService.getMovieCredits(
+          mediaType ? "movie" : "tv",
+          id
+        );
+        setCast(response);
+      } catch (err) {
+        console.log(err.message);
+      }
     };
     fetchCast();
   }, [mediaType, id]);
@@ -25,7 +29,7 @@ const CastGrid = ({ id }) => {
       <h5>Cast</h5>
       <ul className={classes["cast-list"]}>
         {cast.slice(0, 6).map((c) => (
-          <CastItem key={cast.id} cast={c} />
+          <CastItem key={c.id} cast={c} />
         ))}
       </ul>
     </div>
