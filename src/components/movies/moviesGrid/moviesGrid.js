@@ -9,26 +9,42 @@ import classes from "./moviesGrid.module.css";
 const MoviesGrid = () => {
   const mediaType = useSelector((state) => state.movie.mediaType);
   const filter = useSelector((state) => state.search.filter);
+
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
-      let response;
-      if (!filter) {
-        response = await movieServices.getMovieCarousel(
+      try {
+        const response = await movieServices.getMovieCarousel(
           mediaType ? "movie" : "tv",
           "popular"
         );
-      } else {
-        response = await searchServices.search(
-          mediaType ? "movie" : "tv",
-          filter
-        );
+        setMovies(response);
+      } catch (err) {
+        console.log(err.message);
       }
-      setMovies(response);
     };
 
     fetchMovies();
+  }, [mediaType]);
+
+  useEffect(() => {
+    const fetchFilteredMovies = async () => {
+      try {
+        const response = await searchServices.search(
+          mediaType ? "movie" : "tv",
+          filter
+        );
+        setMovies(response);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    // reduce the number of requests
+    const timer = setTimeout(() => fetchFilteredMovies(), 300);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [mediaType, filter]);
 
   return (

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const REACT_APP_API_URL = "https://api.themoviedb.org/3";
-const REACT_APP_API_KEY = "542875e8fd0a4ee32531acb890171761";
+const REACT_APP_API_KEY = "708b423e5fbe3220345becb8cce7ea7f";
 
 const getMovieCarousel = (mediaType, query) => {
   const url = `${REACT_APP_API_URL}/${mediaType}/${query}?api_key=${REACT_APP_API_KEY}`;

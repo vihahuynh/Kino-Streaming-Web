@@ -17,8 +17,8 @@ const SearchBar = () => {
       <input
         className={classes.input}
         type="search"
-        id="gsearch"
-        name="gsearch"
+        id="search"
+        name="search"
         placeholder="Search"
         value={filter}
         onChange={handleChangeFilter}

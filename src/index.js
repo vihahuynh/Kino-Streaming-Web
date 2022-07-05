@@ -8,6 +8,7 @@ import "./index.css";
 
 import movieReducer from "./reducers/movie";
 import searchReducer from "./reducers/search";
+
 const reducer = combineReducers({ movie: movieReducer, search: searchReducer });
 const store = createStore(reducer);
 

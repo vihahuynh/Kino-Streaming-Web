@@ -7,7 +7,6 @@ import BannerItem from "./bannerItem";
 import NextArrow from "../arrows/nextArrow";
 import PrevArrow from "../arrows/prevArrow";
 import Loading from "../loading";
-import Popup from "../popup/popup";
 
 const Banner = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +17,7 @@ const Banner = () => {
       try {
         const response = await movieServices.getMovieCarousel(
           "movie",
-          "popula"
+          "popular"
         );
         setMovies(response);
       } catch (err) {
