@@ -11,11 +11,15 @@ const MovieList = ({ id }) => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const response = await movieServices.getSimilarMovies(
-        mediaType ? "movie" : "tv",
-        id
-      );
-      setMovies(response);
+      try {
+        const response = await movieServices.getSimilarMovies(
+          mediaType ? "movie" : "tv",
+          id
+        );
+        setMovies(response);
+      } catch (err) {
+        console.log(err.message);
+      }
     };
 
     fetchMovies();

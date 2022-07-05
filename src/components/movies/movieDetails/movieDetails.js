@@ -18,13 +18,17 @@ const MovieDetails = ({ id }) => {
 
   useEffect(() => {
     const fetchMovie = async () => {
-      const response = await movieServices.getMovieDetails(
-        mediaType ? "movie" : "tv",
-        id
-      );
+      try {
+        const response = await movieServices.getMovieDetails(
+          mediaType ? "movie" : "tv",
+          id
+        );
 
-      if (response?.id?.toString() === id) {
-        dispatch(movieChange(response));
+        if (response?.id?.toString() === id) {
+          dispatch(movieChange(response));
+        }
+      } catch (err) {
+        console.log(err.message);
       }
     };
 
