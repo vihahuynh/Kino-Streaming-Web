@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import movieServices from "../../../services/movies";
 import searchServices from "../../../services/search";
@@ -8,7 +9,7 @@ import Loading from "../../loading";
 import classes from "./moviesGrid.module.css";
 
 const MoviesGrid = () => {
-  const mediaType = useSelector((state) => state.movie.mediaType);
+  const mediaType = useLocation().pathname.split("/")[1];
   const filter = useSelector((state) => state.search.filter);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -19,7 +20,7 @@ const MoviesGrid = () => {
       setIsLoading(true);
       try {
         const response = await movieServices.getMovieCarousel(
-          mediaType ? "movie" : "tv",
+          mediaType === "movies" ? "movie" : "tv",
           "popular"
         );
         setMovies(response);
@@ -37,7 +38,7 @@ const MoviesGrid = () => {
       setIsLoading(true);
       try {
         const response = await searchServices.search(
-          mediaType ? "movie" : "tv",
+          mediaType === "movies" ? "movie" : "tv",
           filter
         );
         setMovies(response);

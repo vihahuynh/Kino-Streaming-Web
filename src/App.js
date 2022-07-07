@@ -16,13 +16,13 @@ function App() {
           <MoviePlay />
         </Route>
         <Route path="/movies">
-          <Movies mediaType={true} />
+          <Movies />
         </Route>
         <Route path="/tvshows/:id">
           <MoviePlay />
         </Route>
         <Route path="/tvshows">
-          <Movies mediaType={false} />
+          <Movies />
         </Route>
         <Route path="*">
           <NotFound />

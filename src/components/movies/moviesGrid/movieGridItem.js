@@ -1,11 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import classes from "./movieGridItem.module.css";
 
 const MovieGridItem = ({ movie }) => {
-  const mediaType = useSelector((state) => state.movie.mediaType);
+  const mediaType = useLocation().pathname.split("/")[1];
 
   return (
     <div className={classes["movie-container"]}>
@@ -30,7 +30,11 @@ const MovieGridItem = ({ movie }) => {
       <div className={classes.play}>
         <Link
           className={classes.play__btn}
-          to={mediaType ? `/movies/${movie.id}` : `/tvshows/${movie.id}`}
+          to={
+            mediaType === "movies"
+              ? `/movies/${movie.id}`
+              : `/tvshows/${movie.id}`
+          }
         >
           <svg className={classes.play__icon}>
             <use

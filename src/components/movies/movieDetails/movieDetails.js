@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import movieServices from "../../../services/movies";
 import CastGrid from "../../cast/castGrid";
@@ -13,14 +14,14 @@ import classes from "./movieDetails.module.css";
 
 const MovieDetails = ({ id }) => {
   const movie = useSelector((state) => state.movie.movie);
-  const mediaType = useSelector((state) => state.movie.mediaType);
+  const mediaType = useLocation().pathname.split("/")[1];
   const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchMovie = async () => {
       try {
         const response = await movieServices.getMovieDetails(
-          mediaType ? "movie" : "tv",
+          mediaType === "movies" ? "movie" : "tv",
           id
         );
 
@@ -37,9 +38,10 @@ const MovieDetails = ({ id }) => {
 
   if (!movie) return <p>Movie not found</p>;
 
-  const src = mediaType
-    ? `https://www.2embed.ru/embed/tmdb/movie?id=${id}`
-    : `https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=1&e=1`;
+  const src =
+    mediaType === "movies"
+      ? `https://www.2embed.ru/embed/tmdb/movie?id=${id}`
+      : `https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=1&e=1`;
 
   return (
     <div className={classes.container}>
@@ -50,7 +52,7 @@ const MovieDetails = ({ id }) => {
         <div className={classes.movie__details}>
           <h2>{movie.title || movie.name}</h2>
           <p>
-            {mediaType && <span>{movie.runtime} minutes</span>}
+            {mediaType === "movies" && <span>{movie.runtime} minutes</span>}
             <span>
               Published on {movie.release_date || movie.first_air_date}
             </span>

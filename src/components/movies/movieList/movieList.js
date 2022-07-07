@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import movieServices from "../../../services/movies";
 import MovieListItem from "./movieListItem";
 
 import classes from "./movieList.module.css";
-import { useSelector } from "react-redux";
 
 const MovieList = ({ id }) => {
-  const mediaType = useSelector((state) => state.movie.mediaType);
+  const mediaType = useLocation().pathname.split("/")[1];
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
         const response = await movieServices.getSimilarMovies(
-          mediaType ? "movie" : "tv",
+          mediaType === "movies" ? "movie" : "tv",
           id
         );
         setMovies(response);
