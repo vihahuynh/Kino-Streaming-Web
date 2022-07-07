@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import movieServices from "../../../services/movies";
 import CastGrid from "../../cast/castGrid";
 import Video from "../../video/video";
@@ -8,15 +7,18 @@ import MovieList from "../movieList/movieList";
 import GenreList from "./genreList";
 import Stars from "../../stars/stars";
 
-import { movieChange } from "../../../reducers/movie";
-
 import classes from "./movieDetails.module.css";
 import SeasonList from "../movieList/seasonList";
 
 const MovieDetails = ({ id }) => {
-  const movie = useSelector((state) => state.movie.movie);
+  const [movie, setMovie] = useState(null);
+  const [ep, setEp] = useState(null);
   const mediaType = useLocation().pathname.split("/")[1];
-  const dispatch = useDispatch();
+  const location = useLocation();
+
+  const queryParams = new URLSearchParams(location.search);
+  const season = queryParams.get("season");
+  const episode = queryParams.get("episode");
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -25,24 +27,39 @@ const MovieDetails = ({ id }) => {
           mediaType === "movies" ? "movie" : "tv",
           id
         );
-
-        if (response?.id?.toString() === id) {
-          dispatch(movieChange(response));
-        }
+        setMovie(response);
       } catch (err) {
         console.log(err.message);
       }
     };
-
     fetchMovie();
-  }, [id, mediaType, dispatch]);
+  }, [id, mediaType]);
+
+  useEffect(() => {
+    const fetchEpisode = async () => {
+      try {
+        const response = await movieServices.getEpisodeDetails(
+          id,
+          season,
+          episode
+        );
+        setEp(response);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    if (mediaType === "tvshows") fetchEpisode();
+  }, [mediaType, setEp, season, episode, id]);
 
   if (!movie) return <p>Movie not found</p>;
 
   const src =
     mediaType === "movies"
       ? `https://2embed.org/embed/${id}`
-      : `https://2embed.org/embed/${id}/1/1`;
+      : `https://2embed.org/embed/${id}/${season || "1"}/${episode || "1"}`;
+
+  console.log("movie: ", movie);
+  console.log("ep: ", ep);
 
   return (
     <div className={classes.container}>
@@ -50,18 +67,18 @@ const MovieDetails = ({ id }) => {
         <div className={classes.movie__video}>
           <Video id={id} src={src} />
         </div>
+
         <div className={classes.movie__details}>
-          <h2>{movie.title || movie.name}</h2>
+          <h2>{ep?.name || movie.title}</h2>
           <p>
             {mediaType === "movies" && <span>{movie.runtime} minutes</span>}
-            <span>
-              Published on {movie.release_date || movie.first_air_date}
-            </span>
+            <span>Published on {ep?.air_date || movie.release_date}</span>
           </p>
-          <Stars rating={movie.vote_average} />
-          <p>{movie.overview}</p>
+          <Stars rating={ep?.vote_average || movie.vote_average} />
+          <p>{ep?.overview || movie.overview}</p>
           <GenreList genres={movie.genres} />
         </div>
+
         <div className={classes.movie__cast}>
           <CastGrid id={movie.id} mediaType={mediaType} />
         </div>
@@ -70,12 +87,14 @@ const MovieDetails = ({ id }) => {
             <MovieList id={id} mediaType={mediaType} />
           </div>
         )}
+
         {mediaType === "tvshows" && (
           <div className={classes.movie__recommends}>
             <SeasonList seasons={movie.seasons} />
           </div>
         )}
       </div>
+
       <img
         className={classes.backdrop}
         alt="Backdrop"

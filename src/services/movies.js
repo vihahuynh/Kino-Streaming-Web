@@ -23,6 +23,16 @@ const getMovieDetails = (mediaType, id) => {
     });
 };
 
+const getEpisodeDetails = (id, season, episode) => {
+  const url = `${REACT_APP_API_URL}/tv/${id}/season/${season}/episode/${episode}?api_key=${REACT_APP_API_KEY}`;
+  const request = axios.get(url);
+  return request
+    .then((response) => response?.data)
+    .catch((err) => {
+      throw err;
+    });
+};
+
 const getSimilarMovies = (mediaType, id) => {
   const url = `${REACT_APP_API_URL}/${mediaType}/${id}/similar?api_key=${REACT_APP_API_KEY}`;
   const request = axios.get(url);
@@ -70,6 +80,7 @@ const services = {
   getRecommendMovies,
   getMovieCredits,
   getSeasonEpisodes,
+  getEpisodeDetails,
 };
 
 export default services;

@@ -7,7 +7,6 @@ import classes from "./castGrid.module.css";
 
 const CastGrid = ({ id }) => {
   const mediaType = useLocation().pathname.split("/")[1];
-  console.log("mediaType: ", mediaType);
   const [cast, setCast] = useState([]);
 
   useEffect(() => {

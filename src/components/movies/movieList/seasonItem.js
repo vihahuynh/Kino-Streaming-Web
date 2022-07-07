@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import classes from "./movieListItem.module.css";
 import movieServices from "../../../services/movies";
-import { useSelector } from "react-redux";
 import MovieListItem from "./movieListItem";
 
 const SeasonItem = ({ season }) => {
   const [seasonNumber, setSeasonNumber] = useState(0);
   const [episodes, setEpisodes] = useState([]);
-  const id = useSelector((state) => state.movie.movie.id);
+  const id = useLocation().pathname.split("/")[2];
 
   const handleChangeSeason = (number) => {
     setSeasonNumber((prevSeason) => (prevSeason === number ? 0 : number));
@@ -57,9 +57,9 @@ const SeasonItem = ({ season }) => {
       </div>
       {episodes.length > 0 && (
         <ul className={classes["episode-container"]}>
-          {episodes.map((ep) => (
-            <MovieListItem key={ep.id} movie={ep} />
-          ))}
+          {episodes.map((ep) => {
+            return <MovieListItem key={ep.id} movie={ep} />;
+          })}
         </ul>
       )}
     </li>

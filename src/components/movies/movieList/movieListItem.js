@@ -4,10 +4,21 @@ import { Link, useLocation } from "react-router-dom";
 import classes from "./movieListItem.module.css";
 
 const MovieListItem = ({ movie }) => {
-  const mediaType = useLocation().pathname.split("/")[1];
+  const location = useLocation();
+  const mediaType = location.pathname.split("/")[1];
+
+  const id = useLocation().pathname.split("/")[2];
+
+  const url =
+    mediaType === "movies"
+      ? `/movies/${movie.id}`
+      : `/tvshows/${id}?season=${movie.season_number || "1"}&episode=${
+          movie.episode_number || "1"
+        }`;
+
   return (
     <li className={classes["movie-container"]}>
-      <Link className={classes.movie} to={`/${mediaType}/${movie.id}`}>
+      <Link className={classes.movie} to={url}>
         <img
           className={classes.movie__image}
           alt=""
@@ -22,7 +33,8 @@ const MovieListItem = ({ movie }) => {
             <span>
               Release:{" "}
               {movie.release_date?.slice(0, 4) ||
-                movie.first_air_date?.slice(0, 4)}
+                movie.first_air_date?.slice(0, 4) ||
+                movie.air_date?.slice(0, 4)}
             </span>
           </p>
         </div>
