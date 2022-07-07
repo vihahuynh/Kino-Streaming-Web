@@ -3,17 +3,20 @@ import { useSelector } from "react-redux";
 import movieServices from "../../../services/movies";
 import searchServices from "../../../services/search";
 import MovieGridItem from "./movieGridItem";
+import Loading from "../../loading";
 
 import classes from "./moviesGrid.module.css";
 
 const MoviesGrid = () => {
   const mediaType = useSelector((state) => state.movie.mediaType);
   const filter = useSelector((state) => state.search.filter);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
+      setIsLoading(true);
       try {
         const response = await movieServices.getMovieCarousel(
           mediaType ? "movie" : "tv",
@@ -23,6 +26,7 @@ const MoviesGrid = () => {
       } catch (err) {
         console.log(err.message);
       }
+      setIsLoading(false);
     };
 
     fetchMovies();
@@ -30,6 +34,7 @@ const MoviesGrid = () => {
 
   useEffect(() => {
     const fetchFilteredMovies = async () => {
+      setIsLoading(true);
       try {
         const response = await searchServices.search(
           mediaType ? "movie" : "tv",
@@ -39,7 +44,9 @@ const MoviesGrid = () => {
       } catch (err) {
         console.log(err.message);
       }
+      setIsLoading(false);
     };
+
     // reduce the number of requests
     const timer = setTimeout(() => fetchFilteredMovies(), 300);
     return () => {
@@ -49,9 +56,9 @@ const MoviesGrid = () => {
 
   return (
     <div className={classes["movie-grid"]}>
-      {movies.map((movie) => (
-        <MovieGridItem key={movie.id} movie={movie} />
-      ))}
+      {isLoading && <Loading />}
+      {!isLoading &&
+        movies.map((movie) => <MovieGridItem key={movie.id} movie={movie} />)}
     </div>
   );
 };

@@ -4,10 +4,10 @@ import MovieDetails from "../components/movies/movieDetails/movieDetails";
 import Wrapper from "../components/wrapper";
 import ComingSoon from "./comingSoon";
 
-const MoviePlay = ({ isMovie = true }) => {
+const MoviePlay = () => {
   const id = useParams().id;
 
-  if (!isMovie) return <ComingSoon />;
+  // if (!isMovie) return <ComingSoon />;
 
   return (
     <Wrapper>

@@ -2,7 +2,6 @@ import "./App.css";
 import Home from "./pages/home";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Movies from "./pages/movies";
-import TVShows from "./pages/tvShows";
 import MoviePlay from "./pages/movie";
 import NotFound from "./pages/404NotFound";
 
@@ -17,13 +16,13 @@ function App() {
           <MoviePlay />
         </Route>
         <Route path="/movies">
-          <Movies />
+          <Movies mediaType={true} />
         </Route>
         <Route path="/tvshows/:id">
-          <MoviePlay isMovie={false} />
+          <MoviePlay />
         </Route>
         <Route path="/tvshows">
-          <TVShows />
+          <Movies mediaType={false} />
         </Route>
         <Route path="*">
           <NotFound />
