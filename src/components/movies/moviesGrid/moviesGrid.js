@@ -29,11 +29,6 @@ const MoviesGrid = () => {
       }
       setIsLoading(false);
     };
-
-    fetchMovies();
-  }, [mediaType]);
-
-  useEffect(() => {
     const fetchFilteredMovies = async () => {
       setIsLoading(true);
       try {
@@ -49,7 +44,10 @@ const MoviesGrid = () => {
     };
 
     // reduce the number of requests
-    const timer = setTimeout(() => fetchFilteredMovies(), 300);
+    let timer;
+    if (filter === "") fetchMovies();
+    else timer = setTimeout(() => fetchFilteredMovies(), 300);
+
     return () => {
       clearTimeout(timer);
     };
