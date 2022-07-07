@@ -11,7 +11,9 @@ const MovieListItem = ({ movie }) => {
         <img
           className={classes.movie__image}
           alt=""
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w500${
+            movie.poster_path || movie.still_path
+          }`}
         />
         <div className={classes.movie__details}>
           <h5>{movie.title || movie.name}</h5>

@@ -77,3 +77,10 @@
   transform: translateX(1.5rem);
   fill: var(--color-primary);
 }
+
+.episode-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}

@@ -53,12 +53,23 @@ const getMovieCredits = (mediaType, id) => {
     });
 };
 
+const getSeasonEpisodes = (id, season) => {
+  const url = `${REACT_APP_API_URL}/tv/${id}/season/${season}?api_key=${REACT_APP_API_KEY}`;
+  const request = axios.get(url);
+  return request
+    .then((response) => response?.data)
+    .catch((err) => {
+      throw err;
+    });
+};
+
 const services = {
   getMovieCarousel,
   getMovieDetails,
   getSimilarMovies,
   getRecommendMovies,
   getMovieCredits,
+  getSeasonEpisodes,
 };
 
 export default services;

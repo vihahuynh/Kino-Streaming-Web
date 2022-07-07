@@ -11,6 +11,7 @@ import Stars from "../../stars/stars";
 import { movieChange } from "../../../reducers/movie";
 
 import classes from "./movieDetails.module.css";
+import SeasonList from "../movieList/seasonList";
 
 const MovieDetails = ({ id }) => {
   const movie = useSelector((state) => state.movie.movie);
@@ -40,8 +41,8 @@ const MovieDetails = ({ id }) => {
 
   const src =
     mediaType === "movies"
-      ? `https://www.2embed.ru/embed/tmdb/movie?id=${id}`
-      : `https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=1&e=1`;
+      ? `https://2embed.org/embed/${id}`
+      : `https://2embed.org/embed/${id}/1/1`;
 
   return (
     <div className={classes.container}>
@@ -64,9 +65,16 @@ const MovieDetails = ({ id }) => {
         <div className={classes.movie__cast}>
           <CastGrid id={movie.id} mediaType={mediaType} />
         </div>
-        <div className={classes.movie__recommends}>
-          <MovieList id={id} mediaType={mediaType} />
-        </div>
+        {mediaType === "movies" && (
+          <div className={classes.movie__recommends}>
+            <MovieList id={id} mediaType={mediaType} />
+          </div>
+        )}
+        {mediaType === "tvshows" && (
+          <div className={classes.movie__recommends}>
+            <SeasonList seasons={movie.seasons} />
+          </div>
+        )}
       </div>
       <img
         className={classes.backdrop}
