@@ -5,6 +5,8 @@
 .person {
   padding: 12rem 10rem 4rem;
   display: flex;
+
+  align-items: center;
 }
 
 .person__img {
