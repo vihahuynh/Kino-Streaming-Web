@@ -5,7 +5,7 @@ const IconItem = ({ icon }) => {
   return (
     <a className={classes.icon__container} href="/">
       <svg className={classes.icon}>
-        <use xlinkHref={`/sprite.svg#${icon}`}></use>
+        <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#${icon}`}></use>
       </svg>
     </a>
   );
