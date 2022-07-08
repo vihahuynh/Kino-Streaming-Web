@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams, useHistory, useLocation } from "react-router-dom";
 import MovieDetails from "../components/movies/movieDetails/movieDetails";
-import Wrapper from "../components/wrapper";
+import Wrapper from "../components/layouts/wrapper/wrapper";
 
 const MoviePlay = () => {
   const id = useParams().id;

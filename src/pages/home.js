@@ -1,7 +1,7 @@
 import React from "react";
 import MovieCarousel from "../components/movies/movieCarousel/movieCarousel";
 import Banner from "../components/banner/banner";
-import Wrapper from "../components/wrapper";
+import Wrapper from "../components/layouts/wrapper/wrapper";
 
 const Home = () => {
   return (

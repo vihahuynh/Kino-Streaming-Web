@@ -1,8 +1,9 @@
 import React from "react";
-import Footer from "./footer/footer";
-import Newsletter from "./newsletter";
-import Navigation from "./navigation";
-import Logo from "./logo";
+
+import Footer from "../footer/footer";
+import Navigation from "../navigation/navigation";
+import Newsletter from "../newsletter/newsletter";
+import Logo from "../../ui/logo/logo";
 
 const Wrapper = (props) => {
   return (

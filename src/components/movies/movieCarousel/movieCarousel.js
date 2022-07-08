@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import classes from "./movieCarousel.module.css";
 import NextArrow from "../../arrows/nextArrow";
 import PrevArrow from "../../arrows/prevArrow";
-import Loading from "../../loading";
+import Loading from "../../loading/loading";
 
 const settings = {
   infinite: true,

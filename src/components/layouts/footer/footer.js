@@ -1,6 +1,6 @@
 import React from "react";
-import IconItem from "../icons/iconItem";
-import Links from "../links/links";
+import IconItem from "../../ui/icons/iconItem";
+import Links from "../../links/links";
 import Copyright from "./copyright";
 
 import classes from "./footer.module.css";

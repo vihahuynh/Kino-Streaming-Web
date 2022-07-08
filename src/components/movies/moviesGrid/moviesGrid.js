@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import movieServices from "../../../services/movies";
 import searchServices from "../../../services/search";
 import MovieGridItem from "./movieGridItem";
-import Loading from "../../loading";
+import Loading from "../../loading/loading";
 
 import classes from "./moviesGrid.module.css";
 

@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import MoviesGrid from "../components/movies/moviesGrid/moviesGrid";
-import Wrapper from "../components/wrapper";
+import Wrapper from "../components/layouts/wrapper/wrapper";
 import SeachBar from "../components/search/search";
 
 import classes from "./movies.module.css";
