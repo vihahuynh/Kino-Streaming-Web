@@ -7,7 +7,7 @@
       rgba(0, 0, 0, 0.7),
       var(--color-grey-dark)
     ),
-    url("../assets//posters-wall.jpg");
+    url("../assets/posters-wall.jpg");
 
   display: flex;
   justify-content: center;

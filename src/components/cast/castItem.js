@@ -6,7 +6,7 @@ import classes from "./castItem.module.css";
 const CastItem = ({ cast }) => {
   return (
     <li>
-      <Link className={classes.cast} to="/">
+      <Link className={classes.cast} to={`/person/${cast.id}`}>
         <img
           className={classes.cast__image}
           alt="Cast"

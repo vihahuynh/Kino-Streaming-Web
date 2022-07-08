@@ -1,3 +1,7 @@
+.container {
+  margin-bottom: 6rem;
+}
+
 .person {
   padding: 12rem 10rem 4rem;
   display: flex;
@@ -36,4 +40,16 @@ h2 {
   text-align: justify;
   font-size: 1.2rem;
   margin-top: 2rem;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -5;
+  height: 100%;
+  width: 100vw;
+  opacity: 0.2;
+  object-fit: cover;
 }

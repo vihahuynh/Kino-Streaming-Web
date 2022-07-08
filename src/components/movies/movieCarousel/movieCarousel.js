@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
-import movieServices from "../../../services/movies";
-import trendingServices from "../../../services/trending";
 import MovieItem from "./movieItem";
 import Slider from "react-slick";
 
 import classes from "./movieCarousel.module.css";
 import NextArrow from "../../ui/arrows/nextArrow";
 import PrevArrow from "../../ui/arrows/prevArrow";
-import Loading from "../../ui/loading/loading";
 
 const settings = {
   infinite: true,
@@ -61,36 +57,36 @@ const settings = {
   ],
 };
 
-const MovieCarousel = ({ name, query, trending = false, movie = true }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
+const MovieCarousel = ({ name, movies }) => {
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        if (!trending) {
-          const response = await movieServices.getMovieCarousel(
-            movie ? "movie" : "tv",
-            query
-          );
-          setMovies(response);
-        } else {
-          const response = await trendingServices.getTrending(
-            movie ? "movie" : "tv",
-            "week"
-          );
-          setMovies(response);
-        }
-      } catch (err) {
-        console.log(err.message);
-      }
-      setTimeout(() => setIsLoading(false), 200);
-    };
+  // useEffect(() => {
+  //   const fetchMovies = async () => {
+  //     try {
+  //       if (!trending) {
+  //         const response = await movieServices.getMovieCarousel(
+  //           movie ? "movie" : "tv",
+  //           query
+  //         );
+  //         setMovies(response);
+  //       } else {
+  //         const response = await trendingServices.getTrending(
+  //           movie ? "movie" : "tv",
+  //           "week"
+  //         );
+  //         setMovies(response);
+  //       }
+  //     } catch (err) {
+  //       console.log(err.message);
+  //     }
+  //     setTimeout(() => setIsLoading(false), 200);
+  //   };
 
-    fetchMovies();
-  }, [query, trending, movie]);
+  //   fetchMovies();
+  // }, [query, trending, movie]);
 
-  if (isLoading) return <Loading height="20vh" />;
+  if (!movies) return null;
 
   return (
     <div className={classes.container}>
