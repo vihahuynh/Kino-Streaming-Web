@@ -24,6 +24,8 @@ const CastGrid = ({ id }) => {
     fetchCast();
   }, [mediaType, id]);
 
+  if (!cast.length) return null;
+
   return (
     <div className={classes["cast-container"]}>
       <h5>Cast</h5>

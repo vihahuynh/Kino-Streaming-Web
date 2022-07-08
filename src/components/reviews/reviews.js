@@ -18,6 +18,8 @@ const Reviews = ({ mediaType, id }) => {
     fetchReviews();
   }, [mediaType, id]);
 
+  if (!reviews.length) return null;
+
   return (
     <div>
       <h5>Reviews</h5>
