@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./movieItem.module.css";
-import Button from "../../button/button";
+import Button from "../../ui/button/button";
 
 const MovieItem = ({ movie }) => {
   return (

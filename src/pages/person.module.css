@@ -1,0 +1,39 @@
+.person {
+  padding: 12rem 10rem 4rem;
+  display: flex;
+}
+
+.person__img {
+  height: 50rem;
+}
+
+.person__info {
+  padding-left: 3rem;
+  color: var(--color-grey-light);
+
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.person__info--basic {
+  display: flex;
+  justify-content: space-between;
+}
+
+.person__info--basic p {
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+}
+
+.person__info--bio {
+  text-align: justify;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}

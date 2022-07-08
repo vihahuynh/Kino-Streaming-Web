@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Movies from "./pages/movies";
 import MoviePlay from "./pages/movie";
 import NotFound from "./pages/404NotFound";
+import Person from "./pages/person";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path="/tvshows">
           <Movies />
+        </Route>
+        <Route path="/person/:id">
+          <Person />
         </Route>
         <Route path="*">
           <NotFound />

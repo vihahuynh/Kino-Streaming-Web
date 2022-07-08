@@ -5,7 +5,7 @@ import CastGrid from "../../cast/castGrid";
 import Video from "../../video/video";
 import MovieList from "../movieList/movieList";
 import GenreList from "./genreList";
-import Stars from "../../stars/stars";
+import Stars from "../../ui/stars/stars";
 
 import classes from "./movieDetails.module.css";
 import SeasonList from "../movieList/seasonList";

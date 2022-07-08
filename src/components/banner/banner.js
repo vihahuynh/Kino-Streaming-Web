@@ -4,9 +4,9 @@ import classes from "./banner.module.css";
 
 import { Carousel } from "react-bootstrap";
 import BannerItem from "./bannerItem";
-import NextArrow from "../arrows/nextArrow";
-import PrevArrow from "../arrows/prevArrow";
-import Loading from "../loading/loading";
+import NextArrow from "../ui/arrows/nextArrow";
+import PrevArrow from "../ui/arrows/prevArrow";
+import Loading from "../ui/loading/loading";
 
 const Banner = () => {
   const [isLoading, setIsLoading] = useState(true);

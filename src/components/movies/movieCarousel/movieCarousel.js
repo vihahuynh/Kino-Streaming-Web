@@ -5,9 +5,9 @@ import MovieItem from "./movieItem";
 import Slider from "react-slick";
 
 import classes from "./movieCarousel.module.css";
-import NextArrow from "../../arrows/nextArrow";
-import PrevArrow from "../../arrows/prevArrow";
-import Loading from "../../loading/loading";
+import NextArrow from "../../ui/arrows/nextArrow";
+import PrevArrow from "../../ui/arrows/prevArrow";
+import Loading from "../../ui/loading/loading";
 
 const settings = {
   infinite: true,
