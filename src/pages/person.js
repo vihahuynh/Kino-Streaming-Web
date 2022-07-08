@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Wrapper from "../components/layouts/wrapper/wrapper";
 import MovieCarousel from "../components/movies/movieCarousel/movieCarousel";
+import BackgroundImg from "../components/ui/backgroundImg/backgroundImg";
 
 import personServices from "../services/person";
 import classes from "./person.module.css";
@@ -68,9 +69,7 @@ const Person = () => {
         <MovieCarousel name="Movie credits" movies={movies?.value?.cast} />
         <MovieCarousel name="TV show credits" movies={tvShows?.value?.cast} />
       </div>
-      <img
-        className={classes.backdrop}
-        alt="Backdrop"
+      <BackgroundImg
         src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
       />
     </Wrapper>

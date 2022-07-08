@@ -73,6 +73,16 @@ const getSeasonEpisodes = (id, season) => {
     });
 };
 
+const getReviews = (mediaType, id) => {
+  const url = `${REACT_APP_API_URL}/${mediaType}/${id}/reviews?api_key=${REACT_APP_API_KEY}`;
+  const request = axios.get(url);
+  return request
+    .then((response) => response?.data?.results)
+    .catch((err) => {
+      throw err;
+    });
+};
+
 const services = {
   getMovieCarousel,
   getMovieDetails,
@@ -81,6 +91,7 @@ const services = {
   getMovieCredits,
   getSeasonEpisodes,
   getEpisodeDetails,
+  getReviews,
 };
 
 export default services;

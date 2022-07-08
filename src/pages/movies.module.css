@@ -1,14 +1,6 @@
 .movies__title {
   width: 100%;
   height: 40vh;
-  background-size: cover;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.7),
-      var(--color-grey-dark)
-    ),
-    url("../assets/posters-wall.jpg");
-
   display: flex;
   justify-content: center;
   align-items: center;

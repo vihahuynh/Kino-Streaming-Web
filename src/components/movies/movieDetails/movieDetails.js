@@ -6,9 +6,11 @@ import Video from "../../video/video";
 import MovieList from "../movieList/movieList";
 import GenreList from "./genreList";
 import Stars from "../../ui/stars/stars";
+import Reviews from "../../reviews/reviews";
+import SeasonList from "../movieList/seasonList";
+import BackgroundImg from "../../ui/backgroundImg/backgroundImg";
 
 import classes from "./movieDetails.module.css";
-import SeasonList from "../movieList/seasonList";
 
 const MovieDetails = ({ id }) => {
   const [movie, setMovie] = useState(null);
@@ -58,9 +60,6 @@ const MovieDetails = ({ id }) => {
       ? `https://2embed.org/embed/${id}`
       : `https://2embed.org/embed/${id}/${season || "1"}/${episode || "1"}`;
 
-  console.log("movie: ", movie);
-  console.log("ep: ", ep);
-
   return (
     <div className={classes.container}>
       <div className={classes.movie}>
@@ -82,6 +81,14 @@ const MovieDetails = ({ id }) => {
         <div className={classes.movie__cast}>
           <CastGrid id={movie.id} mediaType={mediaType} />
         </div>
+
+        <div className={classes.movie__reviews}>
+          <Reviews
+            mediaType={mediaType === "movies" ? "movie" : "tv"}
+            id={movie.id}
+          />
+        </div>
+
         {mediaType === "movies" && (
           <div className={classes.movie__recommends}>
             <MovieList id={id} mediaType={mediaType} />
@@ -95,10 +102,8 @@ const MovieDetails = ({ id }) => {
         )}
       </div>
 
-      <img
-        className={classes.backdrop}
-        alt="Backdrop"
-        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+      <BackgroundImg
+        src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
       />
     </div>
   );

@@ -53,16 +53,8 @@
   grid-row: 1 / -1;
 }
 
-.backdrop {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -5;
-  height: 100%;
-  width: 100vw;
-  opacity: 0.2;
-  object-fit: cover;
+.movie__reviews {
+  grid-column: -1 / 1;
 }
 
 @media (max-width: 56.25em) {
